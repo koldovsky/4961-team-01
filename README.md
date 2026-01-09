@@ -38,3 +38,5 @@ Team
 - Liudmyla Pachynska
 - Olga Molodychenko
 - Inna Kukharuk
+- Kurchyk Vladyslav
+- Mariia Diachuk
