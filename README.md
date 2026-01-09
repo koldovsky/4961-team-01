@@ -40,3 +40,4 @@ Team
 - Inna Kukharuk
 - Kurchyk Vladyslav
 - Mariia Diachuk
+- Arsen Buldiak
