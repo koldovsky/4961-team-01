@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playpen+Sans&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+  --text-color: #433f35;
+  --h-color: #515151;
+  --big-title-color: #141414;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

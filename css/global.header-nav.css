@@ -1,0 +1,23 @@
+.header__contact-icon {
+  color: #c0bfaa;
+}
+
+.header__contact-link,
+.header__nav-link,
+.header__subtitle,
+.header__cta,
+.header__hero-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.header__text {
+  color: var(--h-color);
+}
+
+.header__title,
+.header__subtitle {
+  color: var(--big-title-color);
+  font-family: "Crimson Text", serif;
+}
