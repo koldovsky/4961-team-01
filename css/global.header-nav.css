@@ -1,5 +1,5 @@
 .header__contact-icon {
-  color: #c0bfaa;
+  color: var(--header-icon-color);
 }
 
 .header__contact-link,
