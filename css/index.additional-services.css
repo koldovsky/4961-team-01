@@ -1,5 +1,5 @@
-body {
-  background-color: #cfcfbb;
+/*body {
+  background-color: #cfcfbb;*/
 }
 
 .additional-services {
@@ -9,9 +9,8 @@ body {
 }
 
 .additional-services__link {
-  font-family: inherit, serif;
+  font-family: inherit;
   font-size: 36px;
-  font-weight: 400;
   letter-spacing: 2px;
   color: #141414;
   font-weight: bold;
