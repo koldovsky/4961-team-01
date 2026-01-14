@@ -1,0 +1,65 @@
+.cta__title {
+    font-family: "Crimson Text", serif;
+    color: var(--big-title-color);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.cta__section {
+    padding-top: 60px;
+    padding-bottom: 115px;
+    background: var(--ui-brand-color);
+}
+
+.cta__section-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.cta__text-block {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cta__description {
+    font-family: "Red Hat Display", sans-serif;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 19px;
+    margin-top: 25px;
+}
+
+.cta__button {
+    background-color: var(--ui-btn-primary-bg-color);
+    color: var(--ui-btn-primary-color);
+    font-family: var(--ui-button-font-family);
+    padding: 15px 26px;
+    box-sizing: border-box;
+    margin: 10px;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.cta__button-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.cta__image {
+    width: auto;
+    display: block;
+    height: 50px;
+}
+
+.cta__figure {
+    display: flex;
+    justify-content: center;
+}
