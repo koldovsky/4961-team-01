@@ -1,0 +1,24 @@
+body {
+  background-color: #cfcfbb;
+}
+
+.additional-services {
+  text-align: center;
+  margin: 120px auto;
+  max-width: 1000px;
+}
+
+.additional-services__link {
+  font-family: inherit, serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #141414;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.additional-services__link:hover {
+  color: #8a7f5a;
+}
