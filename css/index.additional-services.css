@@ -1,19 +1,22 @@
 /*body {
-  background-color: #cfcfbb;*/
-}
+  background-color: #cfcfbb;
+}*/
 
 .additional-services {
+  background-color: #bfbfa9;
   text-align: center;
   margin: 120px auto;
   max-width: 1000px;
+  padding: 100px; 
+  border: 0;
+  margin: 0;
 }
 
 .additional-services__link {
-  font-family: inherit;
-  font-size: 36px;
+  font-family: "Crimson Text", serif;
+  font-size: 48px;
   letter-spacing: 2px;
-  color: #141414;
-  font-weight: bold;
+  color: #242424;
   text-transform: uppercase;
   line-height: 1.4;
 }
