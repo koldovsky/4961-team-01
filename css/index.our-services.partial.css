@@ -6,6 +6,8 @@
 .our-services__container {
   padding-left: 24px;
   padding-right: 24px;
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
 }
 
 /* --- СТИЛІ ДЛЯ МОБІЛЬНИХ  --- */
@@ -145,7 +147,48 @@
     grid-column-start: 3; /* Починаємо з 3-ї лінії (пропускаємо перші 2 колонки) */
     grid-column-end: span 5; /* І займаємо 5 колонок */
   }
+}
 
-  /* Парні картки (2-га, 4-та) автоматично стануть поруч, 
-       бо 2 (відступ) + 5 (перша) + 5 (друга) = 12 */
+@media (min-width: 768px) {
+  .our-services__header {
+    grid-template-columns: repeat(12, 1fr);
+    text-align: left;
+    align-items: start; /* Вирівнювання по верхньому краю */
+    margin-bottom: 60px;
+  }
+
+  .our-services__eyebrow {
+    grid-column: span 2;
+    margin: 0; /* Прибираємо дефолтні марджини */
+  }
+
+  .our-services__title {
+    grid-column: 3 / span 7; /* Починаємо з 3-ї лінії, щоб бути під картками */
+    margin: 0; /* Прибираємо margin-top: 50px, який був на мобільці */
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .our-services__list {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px; /* Відступ між колонками */
+    row-gap: 80px;    /* Відступ між рядами карток */
+  }
+
+  .service-card {
+    margin-top: 0;
+    grid-column: span 5;
+  }
+
+  /* Кожна 1-ша та 3-тя картка (непарні) починаються з 3-ї колонки */
+  .service-card:nth-child(odd) {
+    grid-column-start: 3;
+    grid-column-end: span 5;
+  }
+
+  /* Кожна 2-га та 4-та картка (парні) займають наступні 5 колонок */
+  .service-card:nth-child(even) {
+    grid-column: span 5;
+  }
 }
