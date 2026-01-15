@@ -7,6 +7,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 :root {
@@ -19,6 +20,10 @@
   --ui-btn-primary-color: #f6f1ed;
   --ui-button-font-family: 'Red Hat Display', sans-serif;
   --ui-brand-color: #dfd1a7;
+  --ui-light-shade-color: #f6f1ed;
+  --ui-small-color: #515151;
+  --ui-price-color: #c0b184;
+  --ui-link-color: #242424;
 }
 
 img {
