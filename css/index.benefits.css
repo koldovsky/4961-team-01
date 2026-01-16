@@ -3,6 +3,7 @@
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f6f1ed;
 }
 
 .benefits__header {
@@ -18,24 +19,28 @@
 
 .benefits__title {
   font-size: 34px;
+  color: #141414;
   font-weight: normal;
 }
 
 .benefits__item-number {
   display: block;
-  font-size: 1.5em;
-  color: #ff9900;
+  font-size: var(--text-font-size-md, var(--text-font-size, inherit));
+  color: #c0b184;
   margin-bottom: 10px;
 }
 
 .benefits__item-title {
-  font-size: 2.2em;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  color:#141414;
+  font-size: 23px;
+  font-family: "Crimson Text", serif;
+  text-align: left;
+  text-transform: none;
 }
 
 .benefits__item-text {
-  color: #555;
+  color: #433f35cc;
+  font-family: "Red Hat Display", sans-serif;
   line-height: 1.4;
 }
 
