@@ -5,11 +5,12 @@
 .additional-services {
   background-color: #bfbfa9;
   text-align: center;
-  margin: 120px auto;
+  padding: 120px 20px; 
+}
+
+.additional-services__content {
   max-width: 1000px;
-  padding: 100px; 
-  border: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .additional-services__link {
@@ -19,6 +20,9 @@
   color: #242424;
   text-transform: uppercase;
   line-height: 1.4;
+   display: inline-block;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .additional-services__link:hover {
