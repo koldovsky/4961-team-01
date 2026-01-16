@@ -1,0 +1,34 @@
+.about-us {
+  background-color: var(--ui-dark-shade-color);
+  text-align: center;
+  padding: 120px 20px;
+}
+.about-us__label {
+  color: var(--ui-small-color);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.about-us__title {
+  color: var(--big-title-color);
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+.about-us__text {
+  color: var(--text-color);
+  font-size: 17px;
+  line-height: 27.2px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.btn {
+  background-color: var(--ui-btn-primary-bg-color);
+  color: var(--ui-btn-primary-color);
+  font-family: var(--ui-button-font-family);
+  font-size: 13px;
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
