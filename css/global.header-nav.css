@@ -1,5 +1,5 @@
 .header__nav {
-  background-color: var(--primary-light-color);
+  background-color: var(--ui-light-shade-color);
   padding: 5px;
 
   @media (min-width: 990px) {

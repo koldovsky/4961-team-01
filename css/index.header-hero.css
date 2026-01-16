@@ -1,5 +1,5 @@
 .header__hero {
-  background-color: var(--primary-light-color);
+  background-color: var(--ui-light-shade-color);
 
   .header__container {
     padding: 120px 0 0;
@@ -53,7 +53,7 @@
           border-radius: 50%;
           display: inline-flex;
           align-items: center;
-          background-color: var(--primary-light-color);
+          background-color: var(--ui-light-shade-color);
           color: var(--text-color);
           font-family: "Red Hat Display", sans-serif;
           text-align: center;
