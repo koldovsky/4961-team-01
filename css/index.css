@@ -6,5 +6,6 @@
 @import "about-us.header-hero.css";
 @import "index.additional-services.css";
 @import "index.quote.css";
-@import "index.about-us.css";
+@import "index.about-us.partial.css";
 @import "index.benefits.css";
+@import "index.projects.partial.css";
