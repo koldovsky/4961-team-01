@@ -1,23 +1,136 @@
-.header__contact-icon {
-  color: var(--header-icon-color);
-}
+.header__nav {
+  background-color: var(--primary-light-color);
+  padding: 5px;
 
-.header__contact-link,
-.header__nav-link,
-.header__subtitle,
-.header__cta,
-.header__hero-link {
-  color: var(--text-color);
-  text-decoration: none;
-  font-family: "Red Hat Display", sans-serif;
-}
+  @media (min-width: 990px) {
+    padding: 14px 2px;
+    margin: 0 auto;
+  }
 
-.header__text {
-  color: var(--h-color);
-}
+  .header__nav-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 
-.header__title,
-.header__subtitle {
-  color: var(--big-title-color);
-  font-family: "Crimson Text", serif;
+    @media (min-width: 990px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+
+  .header__contacts {
+    order: 3;
+    display: flex;
+    gap: 8px;
+    font-style: normal;
+    flex-direction: column;
+    align-items: center;
+    margin: 16px;
+
+    @media (min-width: 990px) {
+      flex-direction: row;
+      order: 1;
+      font-size: 1rem;
+    }
+
+    .header__contact {
+      display: flex;
+      padding-bottom: 6px;
+
+      &:nth-child(1)::after {
+        content: "";
+        width: 0.5px;
+        height: 16px;
+        background-color: var(--header-icon-color);
+        margin: 1px 10px 0 15px;
+      }
+
+      .header__contact-icon {
+        color: var(--header-icon-color);
+      }
+
+      .header__contact {
+        .header__contact-link {
+          padding-left: 10px;
+          color: var(--text-color);
+          text-decoration: none;
+          font-family: "Red Hat Display", sans-serif;
+          font-size: 0.9rem;
+
+          @media (min-width: 990px) {
+            font-size: 1rem;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .header__logo {
+    order: 1;
+    margin-bottom: 15px;
+    margin-left: 16px;
+    @media (min-width: 990px) {
+      flex-direction: row;
+      order: 2;
+      margin: auto;
+    }
+  }
+
+  .header__nav-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    order: 2;
+
+    @media (min-width: 990px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      order: 3;
+      font-size: 1rem;
+    }
+
+    .header__nav-item {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+
+    .header__nav-link {
+      color: var(--text-color);
+      text-decoration: none;
+      font-family: "Red Hat Display", sans-serif;
+      font-size: 1.1rem;
+      position: relative;
+      display: inline-block;
+
+      @media (min-width: 990px) {
+        font-size: 1rem;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--text-color);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
 }
