@@ -1,0 +1,68 @@
+.benefits {
+  font-family: "Crimson Text", serif;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefits__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.benefits__label {
+  display: block;
+  margin-bottom: 10px;
+  color: #a0a0a0;
+}
+
+.benefits__title {
+  font-size: 34px;
+  font-weight: normal;
+}
+
+.benefits__item-number {
+  display: block;
+  font-size: 1.5em;
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+.benefits__item-title {
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.benefits__item-text {
+  color: #555;
+  line-height: 1.4;
+}
+
+.benefits__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 600px) {
+  .benefits__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .benefits__list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.benefits__media {
+  /* Тут будуть стилі для правої частини, якщо розкоментувати зображення в HTML */
+}
