@@ -3,7 +3,7 @@
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #f6f1ed;
+  background-color: var(--benefits-bg);
 }
 
 .benefits__header {
@@ -14,24 +14,24 @@
 .benefits__label {
   display: block;
   margin-bottom: 10px;
-  color: #a0a0a0;
+  color: var(--benefits-label-color);
 }
 
 .benefits__title {
   font-size: 34px;
-  color: #141414;
+  color: var(--benefits-title-color);
   font-weight: normal;
 }
 
 .benefits__item-number {
   display: block;
   font-size: var(--text-font-size-md, var(--text-font-size, inherit));
-  color: #c0b184;
+  color: var(--benefits-number-color);
   margin-bottom: 10px;
 }
 
 .benefits__item-title {
-  color:#141414;
+  color: var(--benefits-title-color);
   font-size: 23px;
   font-family: "Crimson Text", serif;
   text-align: left;
@@ -39,7 +39,7 @@
 }
 
 .benefits__item-text {
-  color: #433f35cc;
+  color: var(--benefits-item-text-color);
   font-family: "Red Hat Display", sans-serif;
   line-height: 1.4;
 }

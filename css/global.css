@@ -32,6 +32,11 @@
   --additional-services-bg: #bfbfa9;
   --additional-services-link: #242424;
   --additional-services-hover: #8a7f5a;
+  --benefits-bg: #f6f1ed;
+  --benefits-label-color: #a0a0a0;
+  --benefits-title-color: #141414;
+  --benefits-number-color: #c0b184;
+  --benefits-item-text-color: #433f35cc;
 }
 
 img {
