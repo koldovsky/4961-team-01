@@ -1,0 +1,73 @@
+.benefits {
+  font-family: "Crimson Text", serif;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f6f1ed;
+}
+
+.benefits__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.benefits__label {
+  display: block;
+  margin-bottom: 10px;
+  color: #a0a0a0;
+}
+
+.benefits__title {
+  font-size: 34px;
+  color: #141414;
+  font-weight: normal;
+}
+
+.benefits__item-number {
+  display: block;
+  font-size: var(--text-font-size-md, var(--text-font-size, inherit));
+  color: #c0b184;
+  margin-bottom: 10px;
+}
+
+.benefits__item-title {
+  color:#141414;
+  font-size: 23px;
+  font-family: "Crimson Text", serif;
+  text-align: left;
+  text-transform: none;
+}
+
+.benefits__item-text {
+  color: #433f35cc;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 1.4;
+}
+
+.benefits__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 600px) {
+  .benefits__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .benefits__list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.benefits__media {
+  /* Тут будуть стилі для правої частини, якщо розкоментувати зображення в HTML */
+}
