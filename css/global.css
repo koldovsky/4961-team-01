@@ -29,6 +29,9 @@
   --quote-icon-color: #cfc8b8;
   --quote-text-color: #333;
   --quote-author-color: #b5b09f;
+  --additional-services-bg: #bfbfa9;
+  --additional-services-link: #242424;
+  --additional-services-hover: #8a7f5a;
 }
 
 img {

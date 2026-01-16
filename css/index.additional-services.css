@@ -3,7 +3,7 @@
 }*/
 
 .additional-services {
-  background-color: #bfbfa9;
+  background-color: var(--additional-services-bg);
   text-align: center;
   padding: 120px 20px; 
 }
@@ -17,7 +17,7 @@
   font-family: "Crimson Text", serif;
   font-size: 48px;
   letter-spacing: 2px;
-  color: #242424;
+  color: var(--additiona-services-link);
   text-transform: uppercase;
   line-height: 1.4;
    display: inline-block;
@@ -26,5 +26,5 @@
 }
 
 .additional-services__link:hover {
-  color: #8a7f5a;
+  color: var(--additional-services-hover);
 }
