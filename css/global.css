@@ -7,17 +7,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* outline: 1px solid red; */
+  font-family: "Red Hat Display", sans-serif;
 }
 
 :root {
   scroll-behavior: smooth;
-  --text-color: #433f35;
+  --text-color: #433f35CC;
   --h-color: #515151;
   --big-title-color: #141414;
   --header-icon-color: #c0bfaa;
-  --primary-light-color: #f6f1ed;
-  font-family: "Red Hat Display", sans-serif, "Crimson Text", serif;
+  --ui-btn-primary-bg-color: rgb(43, 43, 43);
+  --ui-btn-primary-color: #f6f1ed;
+  --ui-button-font-family: 'Red Hat Display', sans-serif;
+  --ui-brand-color: #dfd1a7;
+  --ui-light-shade-color: #f6f1ed;
+  --ui-small-color: #515151;
+  --ui-price-color: #c0b184;
+  --ui-link-color: #242424;
+  --w-content-container-size: 1200px
 }
 
 img {
