@@ -26,6 +26,9 @@
   --ui-price-color: #c0b184;
   --ui-link-color: #242424;
   --w-content-container-size: 1200px;
+  --quote-icon-color: #cfc8b8;
+  --quote-text-color: #333;
+  --quote-author-color: #b5b09f;
 }
 
 img {
