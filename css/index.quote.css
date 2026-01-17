@@ -1,10 +1,10 @@
-/*body {
-  background-color: #f6f1ed;
-}*/
 .quote {
-  max-width: 700px;
-  margin: 120px auto;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--benefits-bg);
   text-align: center;
+
 }
 .quote__icon {
   color: var(--quote-icon-color);

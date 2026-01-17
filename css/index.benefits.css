@@ -18,14 +18,16 @@
 }
 
 .benefits__title {
+  font-family: "Crimson text", serif;
   font-size: 34px;
   color: var(--benefits-title-color);
   font-weight: normal;
+  
 }
 
 .benefits__item-number {
   display: block;
-  font-size: var(--text-font-size-md, var(--text-font-size, inherit));
+  font-size: 12px;
   color: var(--benefits-number-color);
   margin-bottom: 10px;
 }
@@ -41,7 +43,7 @@
 .benefits__item-text {
   color: var(--benefits-item-text-color);
   font-family: "Red Hat Display", sans-serif;
-  line-height: 1.4;
+  
 }
 
 .benefits__list {
@@ -68,6 +70,9 @@
   box-sizing: border-box;
 }
 
-.benefits__media {
-  /* Тут будуть стилі для правої частини, якщо розкоментувати зображення в HTML */
+.benefits-media {
+ margin-top: 40px;
 }
+
+
+
