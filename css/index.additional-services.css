@@ -5,7 +5,7 @@
 .additional-services {
   background-color: var(--additional-services-bg);
   text-align: center;
-  padding: 120px 20px; 
+  padding: 100px 20px; 
 }
 
 .additional-services__content {
