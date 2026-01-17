@@ -19,9 +19,11 @@
   --ui-btn-primary-bg-color: rgb(43, 43, 43);
   --ui-btn-primary-color: #f6f1ed;
   --ui-button-font-family: "Red Hat Display", sans-serif;
+  --ui-text-font-family: "Red Hat Display", sans-serif;
   --ui-brand-color: #dfd1a7;
   --ui-light-shade-color: #f6f1ed;
   --ui-dark-shade-color: #f2ebe1;
+  --ui-light-accent-color: #f2ebe1;
   --ui-small-color: #515151;
   --ui-price-color: #c0b184;
   --ui-link-color: #242424;
