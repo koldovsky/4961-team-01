@@ -1,8 +1,6 @@
 .benefits {
   font-family: "Crimson Text", serif;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 120px 20px;
   background-color: var(--benefits-bg);
 }
 
