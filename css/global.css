@@ -50,3 +50,20 @@ img {
   max-width: 1200px;
   margin: auto;
 }
+
+.button {
+  background-color: var(--ui-btn-primary-bg-color);
+  color: var(--ui-btn-primary-color);
+  font-family: var(--ui-button-font-family);
+  padding: 15px 26px;
+  overflow-wrap: break-word;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  border: none;
+  transition: background-color 0.3s ease-in;
+}
+.button:hover {
+  background-color: var(--ui-btn-primary-bg-color-hover);
+}
