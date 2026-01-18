@@ -32,7 +32,7 @@
 
 .benefits__item-title {
   color: var(--benefits-title-color);
-  font-size: 23px;
+  font-weight: 400;
   font-family: "Crimson Text", serif;
   text-align: left;
   text-transform: none;
