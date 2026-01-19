@@ -17,11 +17,13 @@
   --big-title-color: #141414, serif;
   --header-icon-color: #c0bfaa;
   --ui-btn-primary-bg-color: rgb(43, 43, 43);
+  --ui-btn-primary-bg-color-hover: #000;
   --ui-btn-primary-color: #f6f1ed;
   --ui-button-font-family: "Red Hat Display", sans-serif;
+  --ui-text-font-family: "Red Hat Display", sans-serif;
   --ui-brand-color: #dfd1a7;
   --ui-light-shade-color: #f6f1ed;
-  --ui-dark-shade-color: #f2ebe1;
+  --ui-light-accent-color: #f2ebe1;
   --ui-small-color: #515151;
   --ui-price-color: #c0b184;
   --ui-link-color: #242424;
@@ -37,6 +39,11 @@
   --benefits-title-color: #141414;
   --benefits-number-color: #c0b184;
   --benefits-item-text-color: #433f35cc;
+  --footer-background-color: #c0bfaa;
+  --footer-text-color: #1414146e;
+  --footer-li-color-hover: #000;
+  --footer-input-color: #14141412;
+  --footer-hr-color: #141414;
 }
 
 img {
@@ -47,4 +54,22 @@ img {
 .container {
   max-width: 1200px;
   margin: auto;
+}
+
+.button {
+  background-color: var(--ui-btn-primary-bg-color);
+  color: var(--ui-btn-primary-color);
+  font-family: var(--ui-button-font-family);
+  padding: 15px 26px;
+  overflow-wrap: break-word;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  border: none;
+  transition: background-color 0.3s ease-in;
+}
+
+.button:hover {
+  background-color: var(--ui-btn-primary-bg-color-hover);
 }
