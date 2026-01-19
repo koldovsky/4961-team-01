@@ -96,6 +96,7 @@
   border: none;
   height: 1px;
   background: var(--footer-hr-color);
+  opacity: 0.2;
 }
 
 .footer__container-bottom {
