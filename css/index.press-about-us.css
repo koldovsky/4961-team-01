@@ -1,0 +1,76 @@
+/* Kurchyk Vladyslav */
+.press {
+  padding: 110px 20px;
+  background: var(--ui-brand-color);
+  color: var(--text-color);
+}
+.press__title {
+  color: var(--h-color);
+}
+
+.press__title {
+  font-size: 12px;
+}
+
+.press__heading {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Crimson Text", serif;
+  margin-top: 60px;
+  text-transform: uppercase;
+  color: var(--big-title-color);
+}
+
+.press__image {
+  margin-top: 60px;
+}
+
+.press__img {
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.press__items {
+  margin-top: 60px;
+}
+
+.press__tags {
+  color: var(--footer-text-color);
+  font-size: 12px;
+}
+
+.press__item-title {
+  font-family: "Crimson Text", serif;
+  color: var(--big-title-color);
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.press__item-text {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.press__item-link-wrapper {
+  margin-top: 20px;
+}
+
+.press__item-link {
+  font-size: 14px;
+  color: var(--text-color);
+  transition: 0.2s;
+}
+
+.press__item-link:hover {
+  color: var(--footer-li-color-hover);
+  text-decoration: underline;
+}
+
+.press__divider {
+  border: none;
+  border-top: 1px solid var(--footer-hr-color);
+  margin: 15px 0;
+}
