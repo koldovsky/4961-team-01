@@ -151,7 +151,7 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #433f35;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 14px;
   margin-top: auto; /* Притискає кнопку вниз, якщо текст різної довжини */
