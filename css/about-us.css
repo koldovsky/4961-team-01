@@ -1,5 +1,6 @@
 @import "global.css";
 @import "global.header-nav.css";
+@import "about-us.main-title.partial.css";
 @import "about-us.cta.partial.css";
 @import "about-us.services.partial.css";
 @import "global.footer.css";
