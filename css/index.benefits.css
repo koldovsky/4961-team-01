@@ -64,11 +64,6 @@
     gap: 60px;
   }
 }
-
-* {
-  box-sizing: border-box;
-}
-
 .benefits-media {
  margin-top: 40px;
 }
