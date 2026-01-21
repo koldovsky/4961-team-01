@@ -25,6 +25,11 @@
   overflow-wrap: break-word;
 }
 
+.slash {
+  font-size: 48px;
+  vertical-align: baseline;
+}
+
 .additional-services__link:hover {
   color: var(--additional-services-hover);
 }
