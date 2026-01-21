@@ -74,3 +74,13 @@
   border-top: 1px solid var(--footer-hr-color);
   margin: 15px 0;
 }
+
+.background-pic {
+  background-image: url(../img/cozy-neutral-living-room.png);
+  height: 780px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
