@@ -112,3 +112,41 @@
 .footer__rights {
   margin-top: 20px;
 }
+
+@media (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    text-align: left;
+    gap: 80px;
+    padding: 100px 40px;
+    justify-content: center;
+  }
+  .footer__about {
+    width: 435px;
+    max-width: 652px;
+  }
+  .footer__socials {
+    justify-content: flex-start;
+  }
+  .footer__nav,
+  .footer__subscribe,
+  .footer__rights {
+    margin: 0;
+  }
+  .footer__link {
+    font-size: 15px;
+  }
+  .footer__button,
+  .footer__input {
+    max-width: 248px;
+  }
+
+  .footer__container-bottom {
+    padding: 20px 40px;
+    margin: 0;
+  }
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
