@@ -8,28 +8,67 @@
     max-width: var(--w-content-container-size);
     margin: 0 auto;
 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    grid-template-areas:
+      "eyebrow"
+      "first"
+      "content-one"
+      "content-two"
+      "image-two";
+
     interpolate-size: allow-keywords;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 5fr 4fr;
+      grid-template-rows: auto auto;
+      gap: 55px 60px;
+      grid-template-areas:
+        "eyebrow first content-one"
+        "empty content-two image-two";
+    }
 
     .values__eyebrow {
       color: var(--ui-small-color);
       font-weight: 700;
       font-size: 12px;
-      padding: 0 20px 0;
+      /* padding: 0 20px 0; */
+
+      grid-area: eyebrow;
     }
 
     .values__image-wrapper {
-      margin-top: 60px;
-      padding: 0 20px 0;
+      /* padding: 0 20px 0; */
       text-align: center;
 
       img {
         height: auto;
       }
+
+      &:nth-of-type(1) {
+        grid-area: first;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: image-two;
+      }
     }
 
     .values__content {
-      margin-top: 60px;
-      padding: 0 20px 0;
+      /* padding: 0 20px 0; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:nth-of-type(2) {
+        grid-area: content-one;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: content-two;
+      }
 
       .values__text {
         color: var(--text-color);
@@ -96,8 +135,7 @@
             /* currentColor бере колір тексту батьківського елемента */
             background-image:
               linear-gradient(black, black),
-              /* Вертикальна лінія */
-              linear-gradient(black, black); /* Горизонтальна лінія */
+              /* Вертикальна лінія */ linear-gradient(black, black); /* Горизонтальна лінія */
 
             background-position: center;
             background-repeat: no-repeat;
@@ -138,6 +176,15 @@
         .values__accordion-item[open]::details-content {
           height: auto;
         }
+      }
+    }
+
+    .values__empty-space {
+      grid-area: empty;
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
       }
     }
   }
