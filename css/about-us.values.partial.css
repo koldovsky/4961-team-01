@@ -1,0 +1,191 @@
+.values {
+  background-color: var(--ui-light-shade-color);
+  padding: 110px 0 115px 0;
+
+  .values__container {
+    /* padding-left: 24px;
+    padding-right: 24px; */
+    max-width: var(--w-content-container-size);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    grid-template-areas:
+      "eyebrow"
+      "first"
+      "content-one"
+      "content-two"
+      "image-two";
+
+    interpolate-size: allow-keywords;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 5fr 4fr;
+      grid-template-rows: auto auto;
+      gap: 55px 60px;
+      grid-template-areas:
+        "eyebrow first content-one"
+        "empty content-two image-two";
+    }
+
+    .values__eyebrow {
+      color: var(--ui-small-color);
+      font-weight: 700;
+      font-size: 12px;
+      /* padding: 0 20px 0; */
+
+      grid-area: eyebrow;
+    }
+
+    .values__image-wrapper {
+      /* padding: 0 20px 0; */
+      text-align: center;
+
+      img {
+        height: auto;
+      }
+
+      &:nth-of-type(1) {
+        grid-area: first;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: image-two;
+      }
+    }
+
+    .values__content {
+      /* padding: 0 20px 0; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:nth-of-type(2) {
+        grid-area: content-one;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: content-two;
+      }
+
+      .values__text {
+        color: var(--text-color);
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .values__comment {
+        font-family: var(--ui-button-font-family);
+        color: var(--ui-dark-accent-color);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      /* Контейнер акордеона */
+      .values__accordion {
+        margin-top: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Верхня лінія всього блоку */
+
+        /* Окремий елемент (details) */
+        .values__accordion-item {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Лінія під кожним пунктом */
+
+          /* Контент всередині */
+          .values__accordion-item-content {
+            padding-bottom: 24px;
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 95%;
+          }
+
+          .values__accordion-item-title {
+            cursor: pointer;
+            font-family: "Crimson Text", serif; /* Шрифт як на картинці */
+            font-weight: 400;
+            font-size: 22px;
+            padding: 20px 0; /* Відступи зверху і знизу для клікабельної зони */
+
+            /* Магія вирівнювання: текст зліва, плюс справа */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Прибирає стандартний маркер у більшості браузерів */
+          }
+
+          /* Прибирає стандартний трикутник у Safari/Chrome */
+          .values__accordion-item-title::-webkit-details-marker {
+            display: none;
+          }
+
+          /* Створюємо іконку ПЛЮСА через CSS */
+          .values__accordion-item-title::after {
+            /* 1. Прибираємо текст, робимо пустий блок */
+            content: "";
+            display: block;
+            width: 15px; /* Ширина іконки */
+            height: 15px; /* Висота іконки */
+            margin-left: 15px;
+
+            /* 2. Малюємо дві лінії (вертикальну і горизонтальну) використовуючи градієнти */
+            /* currentColor бере колір тексту батьківського елемента */
+            background-image:
+              linear-gradient(black, black),
+              /* Вертикальна лінія */ linear-gradient(black, black); /* Горизонтальна лінія */
+
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* 3. Задаємо розміри ліній: 
+            Перше значення: 2px ширина, 100% висота (вертикальна)
+            Друге значення: 100% ширина, 2px висота (горизонтальна) 
+      */
+            background-size:
+              1.7px 100%,
+              100% 1.7px;
+
+            /* 4. Додаємо плавність для трансформації та зміни розміру */
+            transition:
+              transform 0.3s ease,
+              background-size 0.3s ease;
+          }
+        }
+
+        /* -- ЛОГІКА ВІДКРИТОГО СТАНУ -- */
+        /* Коли details відкритий (має атрибут open), міняємо плюс на МІНУС */
+        .values__accordion-item[open] .values__accordion-item-title::after {
+          /*"Сплющуємо" вертикальну лінію (висота стає 0%), залишається лише горизонтальна (мінус) */
+          background-size:
+            1.7px 0%,
+            100% 1.7px;
+        }
+
+        .values__accordion-item::details-content {
+          height: 0;
+          overflow: hidden;
+          transition:
+            height 0.3s,
+            content-visibility 0.3s;
+          transition-behavior: allow-discrete;
+        }
+
+        .values__accordion-item[open]::details-content {
+          height: auto;
+        }
+      }
+    }
+
+    .values__empty-space {
+      grid-area: empty;
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+}
