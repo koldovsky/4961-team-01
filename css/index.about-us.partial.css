@@ -110,6 +110,14 @@
 
 .about-us__text .button {
   margin: 35px 0 0 0;
+  width: 173px;
+  height: 46px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.13px;
+  line-height: 16.9px;
+  font-family: var(--ui-button-font-family);
 }
 
 /* RESPONSIVE */
