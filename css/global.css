@@ -45,6 +45,13 @@
   --footer-li-color-hover: #000;
   --footer-input-color: #14141412;
   --footer-hr-color: #141414;
+  --about-us-team-bgcolor: #f6eee3;
+  --about-us-team-title-color: #141414;
+  --about-us-team-member-color: #faf5ef;
+  --about-us-team-position-color: #C0B184;
+  --about-us-team-responsibilities-color: #818181;
+  
+
 }
 
 img {
