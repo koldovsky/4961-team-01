@@ -21,25 +21,33 @@
 
 /* Label in the left column */
 .about-us__label {
+  display: inline;
   grid-column: 1;
   margin: 0 0 8px 0;
   color: var(--ui-small-color);
   font-size: 12px;
+  font-size-adjust: none;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  height: auto;
+  letter-spacing: normal;
   white-space: nowrap;
+  line-height: 19.2px;
+  text-align: left;
+  text-transform: none;
+  vertical-align: baseline;
 }
 
 /* Title in the right column */
 .about-us__title {
+  display: inline;
   grid-column: 2;
   margin: 0;
+  overflow-wrap: break-word;
   font-family: var(--ui-big-title-font-family);
   font-size-adjust: none;
   font-language-override: normal;
   font-optical-sizing: auto;
-  font-size: 34px;
+  font-size: 38px;
   font-weight: 400;
   height: auto;
   line-height: 40.8px;
@@ -74,9 +82,21 @@
 
 /* text styling similar to example */
 .about-us__text {
+  display: inline;
   color: var(--text-color);
+  font-optical-sizing: auto;
   font-size: 17px;
-  line-height: 1.75;
+  font-size-adjust: none;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 27.2px;
+  overflow-wrap: break-word;
+  text-align: left;
+  vertical-align: baseline;
+  text-transform: none;
+  width: auto;
+  font-family: var(--ui-text-font-family);
 }
 
 .about-us__text p + p {
@@ -89,7 +109,7 @@
 }
 
 .about-us__text .button {
-  margin: 10px;
+  margin: 35px 0 0 0;
 }
 
 /* RESPONSIVE */
