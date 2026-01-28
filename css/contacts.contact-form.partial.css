@@ -1,0 +1,215 @@
+.faq {
+  padding: 80px 0;
+  background-color: #f6f1ed; /* Основний фон секції */
+  interpolate-size: allow-keywords;
+
+  --input-bg: rgba(20, 20, 20, 0.02);
+  --input-border: #c0bfaa;
+  --form-bg: #f2ebe1;
+  --font-serif: "Crimson Text", serif;
+
+  .faq__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .faq__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  /* --- Ліва частина (Текст + Акордеон) --- */
+  .faq__subtitle {
+    color: var(--ui-small-color);
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .faq__title {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--big-title-color);
+    margin-top: 20px;
+  }
+
+  .faq__description {
+    font-size: 17px;
+    color: var(--text-color);
+    margin-top: 25px;
+  }
+
+  /* Accordion container */
+  .faq__accordion {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Top border line for accordion */
+
+    /* Individual accordion item (details element) */
+    .faq__accordion-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Border line under each item */
+
+      /* Content inside accordion item */
+      .faq__accordion-item-content {
+        padding-bottom: 24px;
+        color: var(--text-color);
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 95%;
+      }
+
+      .faq__accordion-item-title {
+        cursor: pointer;
+        font-family: "Crimson Text", serif;
+        font-weight: 400;
+        font-size: 22px;
+        padding: 20px 0; /* Vertical padding for clickable area */
+
+        /* Alignment: text on left, icon on right */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none; /* Remove standard marker in most browsers */
+      }
+
+      /* Remove default disclosure triangle in Safari/Chrome */
+      .faq__accordion-item-title::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Create PLUS icon using CSS gradients */
+      .faq__accordion-item-title::after {
+        /* 1. Remove text and create empty block for icon */
+        content: "";
+        display: block;
+        width: 15px; /* Icon width */
+        height: 15px; /* Icon height */
+        margin-left: 15px;
+
+        /* 2. Draw two lines (vertical and horizontal) using gradients */
+        /* currentColor inherits the text color from parent element */
+        background-image:
+          linear-gradient(black, black),
+          /* Vertical line */ linear-gradient(black, black); /* Horizontal line */
+
+        background-position: center;
+        background-repeat: no-repeat;
+
+        /* 3. Set line dimensions:
+               First value: 2px width, 100% height (vertical line)
+               Second value: 100% width, 2px height (horizontal line)
+            */
+        background-size:
+          1.7px 100%,
+          100% 1.7px;
+
+        /* 4. Add smooth transition for rotation and size change */
+        transition:
+          transform 0.3s ease,
+          background-size 0.3s ease;
+      }
+    }
+
+    /* -- OPEN STATE LOGIC -- */
+    /* When details is open (has open attribute), change plus icon to MINUS */
+    .faq__accordion-item[open] .faq__accordion-item-title::after {
+      /* "Flatten" the vertical line (height becomes 0%), leaving only horizontal line (minus) */
+      background-size:
+        1.7px 0%,
+        100% 1.7px;
+    }
+
+    .faq__accordion-item::details-content {
+      height: 0;
+      overflow: hidden;
+      transition:
+        height 0.3s,
+        content-visibility 0.3s;
+      transition-behavior: allow-discrete;
+    }
+
+    .faq__accordion-item[open]::details-content {
+      height: auto;
+    }
+  }
+
+  .faq__answer {
+    padding-bottom: 24px;
+
+    p {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+
+  /* --- Права частина (Форма) --- */
+  .faq__form-wrapper {
+    background-color: var(--form-bg);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    /* Тінь або інші декоративні елементи, якщо треба */
+  }
+}
+
+/* --- Стилі самої форми (BEM contact-form) --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 355px;
+
+  @media (max-width: 991px) {
+    min-width: 100%;
+  }
+
+  .contact-form__input {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--input-bg);
+    font-size: 16px;
+    color: #333;
+    border: none;
+    resize: none;
+
+    &:focus {
+      border: 1px solid var(--input-border);
+      border-color: var(--ui-btn-primary-bg-color);
+      box-shadow: none;
+    }
+  }
+
+  .contact-form__input--textarea {
+    min-height: 120px;
+  }
+
+  .contact-form__button {
+    background-color: var(--ui-btn-primary-bg-color);
+    color: var(--ui-btn-primary-color);
+    font-family: var(--ui-button-font-family);
+    padding: 15px 26px;
+    margin-top: 56px;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-block;
+    border: none;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}

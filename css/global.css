@@ -12,7 +12,11 @@
 
 :root {
   scroll-behavior: smooth;
+  --bg-color: #f6f1ed;
+  --icon-bg: #f2ebe1;
   --text-color: #433f35cc;
+  --icon-color: #dfd1a7;
+  --divider-color: #c0bfaa;
   --h-color: #515151;
   --big-title-color: #141414;
   --header-icon-color: #c0bfaa;
