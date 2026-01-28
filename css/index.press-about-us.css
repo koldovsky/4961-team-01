@@ -84,3 +84,25 @@
   display: flex;
   justify-content: center;
 }
+
+@media (min-width: 768px) {
+  .press__title {
+  }
+  .press__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .press__image,
+  .press__items {
+    width: 100%;
+    max-width: 512px;
+    padding: 0 30px;
+  }
+  .press__item-title {
+    font-weight: 400;
+  }
+  .press__item-text {
+    margin-top: 10px;
+  }
+}
