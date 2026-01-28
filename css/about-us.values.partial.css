@@ -1,10 +1,10 @@
+/* Arsen Buldiak */
+
 .values {
   background-color: var(--ui-light-shade-color);
   padding: 110px 0 115px 0;
 
   .values__container {
-    /* padding-left: 24px;
-    padding-right: 24px; */
     max-width: var(--w-content-container-size);
     margin: 0 auto;
 
@@ -34,13 +34,11 @@
       color: var(--ui-small-color);
       font-weight: 700;
       font-size: 12px;
-      /* padding: 0 20px 0; */
 
       grid-area: eyebrow;
     }
 
     .values__image-wrapper {
-      /* padding: 0 20px 0; */
       text-align: center;
 
       img {
@@ -57,7 +55,6 @@
     }
 
     .values__content {
-      /* padding: 0 20px 0; */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -85,16 +82,16 @@
         font-size: 14px;
       }
 
-      /* Контейнер акордеона */
+      /* Accordion container */
       .values__accordion {
         margin-top: 40px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Верхня лінія всього блоку */
+        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Top border line for accordion */
 
-        /* Окремий елемент (details) */
+        /* Individual accordion item (details element) */
         .values__accordion-item {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Лінія під кожним пунктом */
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Border line under each item */
 
-          /* Контент всередині */
+          /* Content inside accordion item */
           .values__accordion-item-content {
             padding-bottom: 24px;
             color: var(--text-color);
@@ -105,60 +102,60 @@
 
           .values__accordion-item-title {
             cursor: pointer;
-            font-family: "Crimson Text", serif; /* Шрифт як на картинці */
+            font-family: "Crimson Text", serif;
             font-weight: 400;
             font-size: 22px;
-            padding: 20px 0; /* Відступи зверху і знизу для клікабельної зони */
+            padding: 20px 0; /* Vertical padding for clickable area */
 
-            /* Магія вирівнювання: текст зліва, плюс справа */
+            /* Alignment: text on left, icon on right */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            list-style: none; /* Прибирає стандартний маркер у більшості браузерів */
+            list-style: none; /* Remove standard marker in most browsers */
           }
 
-          /* Прибирає стандартний трикутник у Safari/Chrome */
+          /* Remove default disclosure triangle in Safari/Chrome */
           .values__accordion-item-title::-webkit-details-marker {
             display: none;
           }
 
-          /* Створюємо іконку ПЛЮСА через CSS */
+          /* Create PLUS icon using CSS gradients */
           .values__accordion-item-title::after {
-            /* 1. Прибираємо текст, робимо пустий блок */
+            /* 1. Remove text and create empty block for icon */
             content: "";
             display: block;
-            width: 15px; /* Ширина іконки */
-            height: 15px; /* Висота іконки */
+            width: 15px; /* Icon width */
+            height: 15px; /* Icon height */
             margin-left: 15px;
 
-            /* 2. Малюємо дві лінії (вертикальну і горизонтальну) використовуючи градієнти */
-            /* currentColor бере колір тексту батьківського елемента */
+            /* 2. Draw two lines (vertical and horizontal) using gradients */
+            /* currentColor inherits the text color from parent element */
             background-image:
               linear-gradient(black, black),
-              /* Вертикальна лінія */ linear-gradient(black, black); /* Горизонтальна лінія */
+              /* Vertical line */ linear-gradient(black, black); /* Horizontal line */
 
             background-position: center;
             background-repeat: no-repeat;
 
-            /* 3. Задаємо розміри ліній: 
-            Перше значення: 2px ширина, 100% висота (вертикальна)
-            Друге значення: 100% ширина, 2px висота (горизонтальна) 
-      */
+            /* 3. Set line dimensions:
+               First value: 2px width, 100% height (vertical line)
+               Second value: 100% width, 2px height (horizontal line)
+            */
             background-size:
               1.7px 100%,
               100% 1.7px;
 
-            /* 4. Додаємо плавність для трансформації та зміни розміру */
+            /* 4. Add smooth transition for rotation and size change */
             transition:
               transform 0.3s ease,
               background-size 0.3s ease;
           }
         }
 
-        /* -- ЛОГІКА ВІДКРИТОГО СТАНУ -- */
-        /* Коли details відкритий (має атрибут open), міняємо плюс на МІНУС */
+        /* -- OPEN STATE LOGIC -- */
+        /* When details is open (has open attribute), change plus icon to MINUS */
         .values__accordion-item[open] .values__accordion-item-title::after {
-          /*"Сплющуємо" вертикальну лінію (висота стає 0%), залишається лише горизонтальна (мінус) */
+          /* "Flatten" the vertical line (height becomes 0%), leaving only horizontal line (minus) */
           background-size:
             1.7px 0%,
             100% 1.7px;
