@@ -1,143 +1,111 @@
-/* ---------- About section (uses your variables) ---------- */
+/* SECTION BACKGROUND + SPACING */
 .about-us {
-  padding: 64px 20px;
-  background: var(--ui-light-shade-color);
-  color: var(--text-color);
-  font-family: var(--ui-text-font-family);
+  background: var(--ui-light-accent-color);
+  padding: 80px 0;
 }
 
 .about-us__inner {
   max-width: var(--w-content-container-size);
   margin: 0 auto;
-  padding: 10px;
+  padding: 0 24px;
 }
 
-/* small label above the title */
-.about-us__label {
-  color: var(--ui-small-color);
-  font-size: 13px;
-  letter-spacing: 2px;
-  margin: 0 0 18px 0;
-  text-align: left;
-}
-
-/* Big headline: serif font for contrast */
-.about-us__title {
-  font-family: "Crimson Text", Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 1.02;
-  margin: 0 0 48px 0;
-  color: var(--benefits-title-color); /* main title color token */
-  letter-spacing: -0.5px;
-}
-
-/* italic/emphasis in the title */
-.about-us__title em {
-  font-style: italic;
-  font-weight: 600;
-}
-
-/* content: 2-column grid (image left, text right) */
-.about-us__content {
+/* HEADER LAYOUT:*/
+.about-us__inner {
   display: grid;
-  grid-template-columns: minmax(320px, 520px) 1fr;
-  gap: 60px;
+  grid-template-columns: 140px 1fr; /* <-- makes label more left */
+  column-gap: 60px;
+  row-gap: 32px;
   align-items: start;
 }
 
-/* image column */
-.about-us__image {
-  width: 100%;
-  max-width: 100%;
+/* Label in the left column */
+.about-us__label {
+  grid-column: 1;
+  margin: 0 0 8px 0;
+  color: var(--ui-small-color);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
+
+/* Title in the right column */
+.about-us__title {
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--ui-big-title-font-family);
+  font-size-adjust: none;
+  font-language-override: normal;
+  font-optical-sizing: auto;
+  font-size: 34px;
+  font-weight: 400;
+  height: auto;
+  line-height: 40.8px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--big-title-color);
+  text-align: left;
+  vertical-align: baseline;
+  max-width: 680px;
+}
+
+.about-us__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* CONTENT (image left, text right) aligned with title (right column) */
+.about-us__content {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 10px;
+}
+
 .about-us__image img {
-  display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
-/* text column */
-.about-us__text {
-  font-family: var(--ui-text-font-family);
-  color: var(--text-color);
-  font-size: 18px;
-  line-height: 1.7;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* bold lead sentence - keep body muted color but headline bold darker */
-.about-us__text p b {
-  color: var(--ui-link-color); /* strong color for lead */
-  font-weight: 700;
   display: block;
-  margin-bottom: 8px;
 }
 
-/* paragraphs styling */
-.about-us__text p {
-  margin: 0;
+/* text styling similar to example */
+.about-us__text {
   color: var(--text-color);
+  font-size: 17px;
+  line-height: 1.75;
 }
 
-/* emphasis inside paragraphs */
-.about-us__text em {
-  font-style: italic;
-  color: var(--ui-link-color);
+.about-us__text p + p {
+  margin-top: 18px;
 }
 
-/* CTA - use existing .button style and ensure left alignment */
-.button.btn {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 14px 22px;
-  background: var(--ui-btn-primary-bg-color);
-  color: var(--ui-btn-primary-color);
-  text-decoration: none;
-  font-weight: 700;
-  font-family: var(--ui-button-font-family);
-  align-self: flex-start; /* keep the button left-aligned */
-  border-radius: 2px;
-  letter-spacing: 0.4px;
-  border: none;
-  cursor: pointer;
+.about-us__text b {
+  color: var(--ui-small-color);
+  font-weight: 600;
 }
 
-/* subtle hover that uses your hover token */
-.button.btn:hover {
-  background: var(--ui-btn-primary-bg-color-hover);
-  transform: translateY(-1px);
-  transition: all 150ms ease;
+.about-us__text .button {
+  margin: 10px;
 }
 
-/* Responsive: stack for smaller screens */
-@media (max-width: 880px) {
-  .about-us {
-    padding: 40px 16px;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-us__inner {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
   }
 
-  .about-us__title {
-    font-size: 34px;
-    margin-bottom: 28px;
+  .about-us__label,
+  .about-us__title,
+  .about-us__content {
+    grid-column: 1;
   }
 
   .about-us__content {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .about-us__text {
-    font-size: 16px;
-  }
-}
-
-/* optional larger screen tweak */
-@media (min-width: 1400px) {
-  .about-us__title {
-    font-size: 56px;
   }
 }

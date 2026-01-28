@@ -25,6 +25,7 @@
   --ui-btn-primary-color: #f6f1ed;
   --ui-button-font-family: "Red Hat Display", sans-serif;
   --ui-text-font-family: "Red Hat Display", sans-serif;
+  --ui-big-title-font-family: "Crimson Text", serif;
   --ui-brand-color: #dfd1a7;
   --ui-light-shade-color: #f6f1ed;
   --ui-light-accent-color: #f2ebe1;
@@ -49,6 +50,11 @@
   --footer-li-color-hover: #000;
   --footer-input-color: #14141412;
   --footer-hr-color: #141414;
+  --about-us-team-bgcolor: #f6eee3;
+  --about-us-team-title-color: #141414;
+  --about-us-team-member-color: #faf5ef;
+  --about-us-team-position-color: #c0b184;
+  --about-us-team-responsibilities-color: #818181;
 }
 
 img {

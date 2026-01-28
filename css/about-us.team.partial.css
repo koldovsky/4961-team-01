@@ -1,0 +1,107 @@
+.about__us__team {
+  background-color: var(--about-us-team-bgcolor);
+  padding: 100px 80px;
+  font-family: "Crimson Text", serif;
+}
+
+.about__us__team__header {
+  max-width: 600px;
+  margin-bottom: 80px;
+}
+
+.about__us__team__label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 16px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.about__us__team__title {
+  font-size: 34px;
+  font-family: "Crimson Text", serif;
+  line-height: 40.8px;
+  text-transform: uppercase;
+  color: var(--about-us-team-title-color);
+  font-weight: 400;
+  text-align:left;
+}
+
+.about__us__team__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+@media (min-width: 600px) {
+  .about__us__team__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .about__us__team__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+.about__us__team__member {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background-color: var(--about-us-team-member-color);
+}
+
+@media (min-width: 600px) {
+  .about__us__team__member {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .about__us__team__member {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about__us__team__image {
+  height: 420px;
+  overflow: hidden;
+}
+
+.about__us__team__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.about__us__team__name {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-family: "Crimson Text", serif;
+}
+
+.about__us__team__position {
+  font-size: 14px;
+  color: var(--about-us-team-position-color);
+  margin-bottom: 16px;
+}
+
+.about__us__team__responsibilities {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--about-us-team-responsibilities-color);
+}
+
+.about__us__team__content {
+  padding: 32px 28px;
+}
+@media (min-width: 600px) {
+  .about__us__team__content {
+    padding: 32px 24px;
+  }
+}
+@media (min-width: 1000px) {
+  .about__us__team__content {
+    padding: 32px 48px;
