@@ -1,4 +1,6 @@
 @import "global.css";
 @import "global.header-nav.css";
 @import "projects.header-hero.partial.css";
+@import "projects.apartment-design.partial.css";
+@import "projects.cta.partial.css";
 @import "global.footer.css";

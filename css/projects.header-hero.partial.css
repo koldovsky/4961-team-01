@@ -1,3 +1,6 @@
+.header__nav {
+  background-color: var(--ui-light-accent-color);
+}
 .header__hero {
   background-color: var(--ui-light-accent-color);
   padding: 80px 30px;
