@@ -41,3 +41,4 @@ Team
 - Kurchyk Vladyslav
 - Mariia Diachuk
 - Arsen Buldiak
+- Oleh Nazarenko
