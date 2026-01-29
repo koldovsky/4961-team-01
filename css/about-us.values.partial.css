@@ -2,7 +2,7 @@
 
 .values {
   background-color: var(--ui-light-shade-color);
-  padding: 110px 0 115px 0;
+  padding: 110px 24px 115px 24px;
 
   .values__container {
     max-width: var(--w-content-container-size);
