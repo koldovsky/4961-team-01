@@ -55,9 +55,9 @@
   --about-us-team-member-color: #faf5ef;
   --about-us-team-position-color: #c0b184;
   --about-us-team-responsibilities-color: #818181;
+  --projects-bg-color: #f6f1ed;
 }
-
-img {
+#f6f1ee img {
   max-width: 100%;
   display: block;
 }
