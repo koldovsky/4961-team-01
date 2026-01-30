@@ -2,10 +2,10 @@
   background-color: var(--about-us-team-bgcolor);
   padding: 100px 80px;
   font-family: "Crimson Text", serif;
-}
 
+}
 .about__us__team__header {
-  max-width: 600px;
+  max-width: 650px;
   margin-bottom: 80px;
 }
 
@@ -14,15 +14,20 @@
   font-size: 12px;
   margin-bottom: 16px;
   font-family: "Red Hat Display", sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .about__us__team__title {
-  font-size: 34px;
-  line-height: 40.8px;
+  font-size: 38px;
+  line-height: 1.3;
   text-transform: uppercase;
   font-weight: 400;
-  text-align: left;
   color: var(--about-us-team-title-color);
+}
+
+.about__us__team__title em {
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 .about__us__team__list {
@@ -34,47 +39,55 @@
 @media (min-width: 1000px) {
   .about__us__team__list {
     grid-template-columns: 1fr 1fr;
+    gap: 80px 60px;
   }
 }
 
-
 .about__us__team__member {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 440px;
+  display: flex;
+  flex-direction: column;
   background-color: var(--about-us-team-member-color);
 }
 
+@media (min-width: 768px) {
+  .about__us__team__member {
+    flex-direction: row;
+  }
+}
+
 .about__us__team__image {
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  min-width: 250px;
+  height: 320px;
   overflow: hidden;
 }
 
 .about__us__team__image img {
   width: 100%;
-  height: 440px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
 }
 
-
 .about__us__team__content {
-  padding: 40px 48px;
+  flex: 1;
+  padding: 40px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .about__us__team__name {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .about__us__team__position {
   font-size: 14px;
+  font-family: "Red Hat Display", sans-serif;
+  text-transform: none;
   margin-bottom: 20px;
   color: var(--about-us-team-position-color);
 }
@@ -83,4 +96,48 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--about-us-team-responsibilities-color);
+}
+
+.about__us__team__footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--about-us-team-footer-color);
+}
+
+.about__us__team__footer em {
+  font-style: italic;
+}
+
+.about__us__team__footer a {
+  color: var(--about-us-team-position-color);
+  text-decoration: underline;
+}
+
+.about__us__team__socials {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.about__us__team__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  color: var(--about-us-team-socials-a-color);
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about__us__team__socials a:hover {
+  color: var(--about-us-team-socials-a-color-hover); /* м’який золотистий відтінок */
+  transform: translateY(-2px);
+}
+
+.about__us__team__socials a:last-child {
+  margin-right: 0;
 }
