@@ -84,3 +84,8 @@ img {
 .button:hover {
   background-color: var(--ui-btn-primary-bg-color-hover);
 }
+
+.arrow:hover {
+  background-color: var(--ui-light-accent-color);
+  color: var(--ui-link-color);
+}

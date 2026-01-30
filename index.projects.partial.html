@@ -1,91 +1,90 @@
 <section class="projects">
-  <link rel="stylesheet" href="css/index.projects.partial.css" />
   <div class="container">
     <div class="projects__inner">
-      <p class="projects__label">~ Our works ~</p>
-      <h2 class="projects__title">
-        WHERE VISION MEETS REALITY: EXCEPTIONAL <em>INTERIOR</em> DESIGN
-      </h2>
-      <div class="projects__content">
-        <article class="projects__item">
-          <div class="projects__image-wrapper">
-            <img
-              src="img/projects-remodeling-of-a-living-room.png"
-              alt="Remodeling of a living room"
-              width="548"
-              loading="lazy"
-            />
-          </div>
-          <div class="projects__info">
-            <h3 class="projects__name">Remodeling of a living room</h3>
-            <p class="projects__price">project price ~ $3.000</p>
-            <p class="projects__description">
-              A living room is a space where the family meets in the evening. We
-              created a space full of light and comfort for our clients.
-            </p>
-            <a href="#" class="button projects__btn">Learn more</a>
-          </div>
-        </article>
+      <!-- This is just a simple wrapper now, not a grid. -->
 
-        <article class="projects__item">
-          <div class="projects__image-wrapper">
-            <img
-              src="img/projects-new-kitchen-in-a-private-house.png"
-              alt="New kitchen in a private house"
-              width="548"
-              loading="lazy"
-            />
+      <div class="projects__header">
+        <div class="projects__header-main">
+          <!-- A new wrapper for the left side -->
+          <p class="projects__label">~ Our works ~</p>
+          <h2 class="projects__title">
+            WHERE VISION MEETS REALITY: EXCEPTIONAL <em>INTERIOR</em> DESIGN
+          </h2>
+        </div>
+        <a href="#" class="projects__more-link">More projects</a>
+      </div>
+
+      <div class="projects__carousel">
+        <button class="carousel-arrow prev">&lt;</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <!-- This will be the flex container -->
+            <!-- Card 1 -->
+            <div class="project-card">
+              <img
+                src="img/projects-remodeling-of-a-living-room.png"
+                alt="Remodeling of a living room"
+              />
+              <h3 class="project-card__title">Remodeling of a living room</h3>
+              <p class="projects__price">project price ~ $3.000</p>
+              <p class="projects__description">
+                A living room is a space where the family meets in the evening.
+                We created a space full of light and comfort for our clients.
+              </p>
+              <a href="#" class="button">Learn more</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="project-card">
+              <img
+                src="img/projects-new-kitchen-in-a-private-house.png"
+                alt="New kitchen in a private house"
+              />
+              <h3 class="project-card__title">
+                New kitchen in a private house
+              </h3>
+              <p class="projects__price">project price ~ $5.000</p>
+              <p class="projects__description">
+                When John and Alice moved to California, they wanted to
+                refurnish the old kitchen as it looked outdated. We helped them
+                with this task by creating this spacious kitchen.
+              </p>
+              <a href="#" class="button">Learn more</a>
+            </div>
+            <!-- Card 3 -->
+            <div class="project-card">
+              <img
+                src="img/projects-five-bedroom-contemporary-villa.png"
+                alt="Five-bedroom contemporary villa"
+              />
+              <h3 class="project-card__title">5-Bedroom contemporary villa</h3>
+              <p class="projects__price">project price ~ $12.000</p>
+              <p class="projects__description">
+                We have redesigned the interior of this contemporary villa. Its
+                pallet of white, blue, and gray colors evokes an eternal
+                serenity.
+              </p>
+              <a href="#" class="button">Learn more</a>
+            </div>
+            <!-- Card 4 -->
+            <div class="project-card">
+              <img
+                src="img/projects-master-bedroom-design-in-ny.png"
+                alt="Master bedroom design in NY"
+              />
+              <h3 class="project-card__title">Master bedroom design in NY</h3>
+              <p class="projects__price">project price ~ $2.000</p>
+              <p class="projects__description">
+                We helped a young family to create a master bedroom of their
+                dreams: cozy yet stylish and minimalistic, and not overstuffed
+                with too many elements.
+              </p>
+              <a href="#" class="button">Learn more</a>
+            </div>
           </div>
-          <div class="projects__info">
-            <h3 class="projects__name">New kitchen in a private house</h3>
-            <p class="projects__price">project price ~ $5.000</p>
-            <p class="projects__description">
-              When John and Alice moved to California, they wanted to refurnish
-              the old kitchen as it looked outdated. We helped them with this
-              task by creating this spacious kitchen.
-            </p>
-            <a href="#" class="button projects__btn">Learn more</a>
-          </div>
-        </article>
-        <article class="projects__item">
-          <div class="projects__image-wrapper">
-            <img
-              src="img/projects-five-bedroom-contemporary-villa.png"
-              alt="5-Bedroom contemporary villa"
-              width="548"
-              loading="lazy"
-            />
-          </div>
-          <div class="projects__info">
-            <h3 class="projects__name">5-Bedroom contemporary villa</h3>
-            <p class="projects__price">project price ~ $12.000</p>
-            <p class="projects__description">
-              We have redesigned the interior of this contemporary villa. Its
-              pallet of white, blue, and gray colors evokes an eternal serenity.
-            </p>
-            <a href="#" class="button projects__btn">Learn more</a>
-          </div>
-        </article>
-        <article class="projects__item">
-          <div class="projects__image-wrapper">
-            <img
-              src="img/projects-master-bedroom-design-in-ny.png"
-              alt="Master bedroom design in NY"
-              width="548"
-              loading="lazy"
-            />
-          </div>
-          <div class="projects__info">
-            <h3 class="projects__name">Master bedroom design in NY</h3>
-            <p class="projects__price">project price ~ $2.000</p>
-            <p class="projects__description">
-              We helped a young family to create a master bedroom of their
-              dreams: cozy yet stylish and minimalistic, and not overstuffed
-              with too many elements.
-            </p>
-            <a href="#" class="button projects__btn">Learn more</a>
-          </div>
-        </article>
+        </div>
+
+        <button class="carousel-arrow next">&gt;</button>
       </div>
     </div>
   </div>
