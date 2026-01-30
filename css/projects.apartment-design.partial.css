@@ -1,27 +1,39 @@
-.apartment__layout {
-  margin-top: 30px;
+body {
+  background-color: var(--projects-bg-color);
+}
+
+.apartment__container {
   padding: 0 24px;
+  padding-top: 115px;
 }
 
-.apartment__layout:last-child {
-  margin-bottom: 115px;
+.apartment__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
-.apartment__layout-media {
-  width: 100%;
-  overflow: hidden;
+.apartment__media {
+  margin: 0;
+  padding: 0;
 }
 
-.apartment__layout-img {
-  aspect-ratio: 16 / 11;
+.apartment__media a {
+  display: block;
+  cursor: pointer;
+}
+
+.apartment__media-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 3 / 4;
+  display: block;
 }
 
-.apartment__layout-col {
-  background-color: var(--ui-light-accent-color);
-  padding: 39px;
+.apartment__content {
+  margin-top: 40px;
+  padding: 0;
 }
 
 .apartment__type {
@@ -29,9 +41,19 @@
   font-size: 12px;
 }
 
+.apartment__title-head {
+  margin-top: 20px;
+  font-size: 30px;
+  color: var(--big-title-color);
+  font-family: var(--ui-big-title-font-family);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .apartment__title {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 26px;
   color: var(--big-title-color);
   font-family: var(--ui-big-title-font-family);
   font-weight: 400;
@@ -44,9 +66,11 @@
   gap: 20px;
   font-size: 14px;
   align-items: center;
+  padding: 0;
 }
 
 .apartment__feature {
+  color: var(--big-title-color);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -74,18 +98,90 @@
 }
 
 .apartment__description {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 17px;
-  line-height: 27.2px;
+  line-height: 1.6;
   color: var(--text-color);
 }
 
 .apartment__link {
-  margin-top: 35px;
+  margin-top: 40px;
   max-width: fit-content;
 }
 
+.apartment__divider {
+  opacity: 0.1;
+  margin: 60px 30px;
+}
+
+.apartment__layout {
+  margin-top: 30px;
+  padding: 0 24px;
+}
+
+.apartment__layout:last-child {
+  margin-bottom: 115px;
+}
+
+.apartment__layout-media {
+  background-color: var(--ui-light-accent-color);
+  width: 100%;
+  overflow: hidden;
+}
+
+.apartment__layout-img {
+  aspect-ratio: 16 / 11;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apartment__layout-col {
+  background-color: var(--ui-light-accent-color);
+  padding: 39px;
+}
+
 @media (min-width: 768px) {
+  .apartment__container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 160px 40px 0;
+    align-items: start;
+    max-width: 1170px;
+  }
+
+  .apartment__gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .apartment__media-img {
+    width: 270px;
+    height: 325px;
+    object-fit: cover;
+    aspect-ratio: unset;
+  }
+
+  .apartment__content {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .apartment__title-head {
+    font-size: 38px;
+    margin-top: 15px;
+  }
+
+  .apartment__divider {
+    max-width: 1090px;
+    margin: 70px auto;
+  }
+
   .apartment__layout {
     max-width: 1170px;
     display: flex;
@@ -102,6 +198,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
   }
 
   .apartment__layout--reverse {
@@ -111,8 +208,119 @@
   .apartment__layout-media {
     width: 50%;
   }
+}
 
-  .apartment__layout-col {
-    width: 50%;
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox__content {
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 1;
+  transition: opacity 0.3s;
+  z-index: 10001;
+}
+
+.lightbox__close:hover {
+  opacity: 0.7;
+}
+
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10001;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.lightbox__prev {
+  left: 20px;
+}
+
+.lightbox__next {
+  right: 20px;
+}
+
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox__prev svg,
+.lightbox__next svg {
+  width: 30px;
+  height: 30px;
+}
+
+.apartment__media-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }

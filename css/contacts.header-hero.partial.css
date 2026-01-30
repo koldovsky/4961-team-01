@@ -1,5 +1,9 @@
 /* --- Arsen Buldiak --- */
 
+.header__nav {
+  background-color: var(--ui-light-accent-color);
+}
+
 /* Header hero section with centered content and background */
 .header__hero {
   background-color: var(--ui-light-accent-color);

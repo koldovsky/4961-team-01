@@ -18,12 +18,11 @@
 
 .about__us__team__title {
   font-size: 34px;
-  font-family: "Crimson Text", serif;
   line-height: 40.8px;
   text-transform: uppercase;
-  color: var(--about-us-team-title-color);
   font-weight: 400;
-  text-align:left;
+  text-align: left;
+  color: var(--about-us-team-title-color);
 }
 
 .about__us__team__list {
@@ -32,60 +31,52 @@
   gap: 60px;
 }
 
-@media (min-width: 600px) {
-  .about__us__team__list {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-}
-
 @media (min-width: 1000px) {
   .about__us__team__list {
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
   }
 }
+
 
 .about__us__team__member {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 440px;
   background-color: var(--about-us-team-member-color);
 }
 
-@media (min-width: 600px) {
-  .about__us__team__member {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1000px) {
-  .about__us__team__member {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .about__us__team__image {
-  height: 420px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .about__us__team__image img {
   width: 100%;
-  height: 100%;
+  height: 440px;
   object-fit: cover;
+  display: block;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
 }
 
 
+.about__us__team__content {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .about__us__team__name {
-  font-size: 24px;
-  margin-bottom: 8px;
-  font-family: "Crimson Text", serif;
+  font-size: 26px;
+  margin-bottom: 6px;
 }
 
 .about__us__team__position {
   font-size: 14px;
+  margin-bottom: 20px;
   color: var(--about-us-team-position-color);
-  margin-bottom: 16px;
 }
 
 .about__us__team__responsibilities {
@@ -93,15 +84,3 @@
   line-height: 1.6;
   color: var(--about-us-team-responsibilities-color);
 }
-
-.about__us__team__content {
-  padding: 32px 28px;
-}
-@media (min-width: 600px) {
-  .about__us__team__content {
-    padding: 32px 24px;
-  }
-}
-@media (min-width: 1000px) {
-  .about__us__team__content {
-    padding: 32px 48px;
