@@ -128,33 +128,39 @@
 
 .carousel-arrow {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
-  background-color: #fff;
-  border: 1px solid #ccc;
-  width: 40px;
-  height: 40px;
+  z-index: 9999;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  width: auto;
+  height: auto;
+
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: #6f6f6f;
   cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
 }
 
 .carousel-arrow:hover {
-  background-color: var(--ui-link-color);
-  color: #fff;
-  border-color: var(--ui-link-color);
+  color: #000;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-arrow.prev {
-  left: -60px;
+  left: -40px;
 }
 
 .carousel-arrow.next {
-  right: -60px;
+  right: -40px;
 }
 
 .project-card img {
@@ -196,6 +202,37 @@
   RESPONSIVE DESIGN FOR MOBILE
 =====================================================
 */
+@media (max-width: 1199px) {
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: var(--ui-btn-primary-bg-color);
+    color: var(--ui-btn-primary-color);
+    font-family: var(--ui-button-font-family);
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+  }
+
+  .carousel-arrow:hover {
+    background-color: var(--ui-link-color);
+    color: var(--ui-btn-primary-color);
+    transform: translateY(-50%);
+  }
+
+  .carousel-arrow.prev {
+    left: -40px;
+  }
+
+  .carousel-arrow.next {
+    right: -40px;
+  }
+}
+
 @media (max-width: 992px) {
   .projects__header {
     flex-direction: column;
@@ -213,15 +250,29 @@
   .projects__title {
     font-size: 28px;
   }
+
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .carousel-arrow.prev {
+    left: -10px;
+  }
+
+  .carousel-arrow.next {
+    right: -10px;
+  }
 }
 
 @media (max-width: 480px) {
   .projects__carousel {
-    margin: 0; /* щоб стрілки/контент не вилітали */
+    margin: 0;
   }
 
   .carousel-track {
-    gap: 16px; /* можна 12-20 */
+    gap: 16px;
   }
 
   .project-card {
@@ -230,9 +281,27 @@
   }
 
   .carousel-arrow.prev {
-    left: -10px;
+    left: -15px;
   }
   .carousel-arrow.next {
-    right: -10px;
+    right: -15px;
+  }
+
+  .projects__header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .projects__header-main {
+    align-items: center;
+  }
+
+  .projects__label {
+    text-align: center;
+  }
+
+  .projects__title {
+    text-align: center;
+    max-width: 100%;
   }
 }
