@@ -50,6 +50,10 @@
   margin-top: 10px;
 }
 
+.press__container-image {
+  margin-top: 60px;
+}
+
 .press__img {
   width: 100%;
   margin: auto;
@@ -98,6 +102,7 @@
   border: none;
   border-top: 1px solid var(--footer-hr-color);
   margin: 15px 0;
+  opacity: 0.1;
 }
 
 .background-pic {
@@ -137,5 +142,10 @@
 
   .press__content {
     grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .press__container-image {
+    margin-top: 0px;
   }
 }
