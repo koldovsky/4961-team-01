@@ -79,7 +79,9 @@
   display: flex;
   gap: 30px;
   align-items: stretch;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .project-card {
@@ -96,8 +98,8 @@
 }
 
 .project-card .button {
-  margin-top: auto; 
-  width: 123px; 
+  margin-top: auto;
+  width: 123px;
   height: 47px;
   display: flex;
   align-items: center;
@@ -122,11 +124,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;  */
+  transition: all 0.3s ease;
 }
 
 .carousel-arrow:hover {
-  background-color: var(--ui-link-color); 
+  background-color: var(--ui-link-color);
   color: #fff;
   border-color: var(--ui-link-color);
 }
