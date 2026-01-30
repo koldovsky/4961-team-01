@@ -51,7 +51,7 @@
 .projects__title em {
   font-family: "Crimson Text", serif;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .projects__more-link {
@@ -109,6 +109,10 @@
   transform: translateY(20px);
 }
 
+.project-card.is-offset {
+  transform: translateY(30px);
+}
+
 .project-card .button {
   margin-top: auto;
   width: 123px;
@@ -154,28 +158,37 @@
 }
 
 .project-card img {
-  width: 100%;
+  width: 345px;
+  height: 395px;
   margin-bottom: 20px;
 }
 
 .project-card__title {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--h-color);
+  font-size: 23px;
+  font-weight: 400;
+  color: var(--big-title-color);
+  font-family: var(--ui-big-title-font-family);
   margin-bottom: 10px;
+  line-height: 33.35px;
 }
 
 .projects__price {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--ui-price-color);
   margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 19.2px;
+  font-family: var(--ui-text-font-family);
 }
 
 .projects__description {
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: var(--ui-text-font-family);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 27.2px;
   margin-bottom: 25px;
+  flex-grow: 1;
 }
 
 /*
