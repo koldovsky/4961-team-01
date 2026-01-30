@@ -189,3 +189,25 @@
     font-size: 28px;
   }
 }
+
+@media (max-width: 480px) {
+  .projects__carousel {
+    margin: 0; /* щоб стрілки/контент не вилітали */
+  }
+
+  .carousel-track {
+    gap: 16px; /* можна 12-20 */
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .carousel-arrow.prev {
+    left: -10px;
+  }
+  .carousel-arrow.next {
+    right: -10px;
+  }
+}
