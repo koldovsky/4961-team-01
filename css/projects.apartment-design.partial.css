@@ -141,6 +141,12 @@ body {
   padding: 39px;
 }
 
+@media (max-width: 320px) {
+  .apartment__features {
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 768px) {
   .apartment__container {
     display: grid;
