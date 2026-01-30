@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .projects__header-main {
@@ -26,8 +26,9 @@
 }
 
 .projects__label {
-  color: var(--ui-small-color);
+  color: var(--h-color);
   font-size: 12px;
+  font-family: var(--ui-text-font-family);
   margin-bottom: 15px;
 }
 .projects__title {
@@ -36,9 +37,15 @@
   font-weight: 400;
   font-family: "Crimson Text", serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  text-align: left;
+  letter-spacing: normal;
   max-width: 600px;
-  line-height: 1.3;
+  line-height: 40.8px;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  width: auto;
+  vertical-align: baseline;
 }
 
 .projects__title em {
@@ -49,27 +56,32 @@
 
 .projects__more-link {
   display: flex;
+  font-size: 14px;
+  font-family: var(--ui-button-font-family);
   align-items: center;
   justify-content: center;
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
+  background-color: var(--ui-light-shade-color);
   text-decoration: none;
-  color: var(--ui-link-color);
+  text-decoration-style: solid;
+  text-decoration-color: var(--ui-light-shade-color);
+  text-decoration: underline;
+  color: var(--ui-dark-accent-color);
   text-align: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  line-height: 21px;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
 }
 
-.projects__more-link:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
 .projects__carousel {
   position: relative;
   margin: 0 50px;
+  padding: 0;
 }
 .carousel-viewport {
   overflow: hidden;
