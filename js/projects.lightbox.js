@@ -5,7 +5,6 @@ export function initLightbox() {
     }, 200);
   });
 
-  // Також слухаємо htmx події
   document.body.addEventListener("htmx:afterSettle", function () {
     setTimeout(() => {
       init();
@@ -13,7 +12,6 @@ export function initLightbox() {
   });
 
   function init() {
-    // Перевіряємо чи лайтбокс вже ініціалізований
     if (window.lightboxInitialized) return;
 
     class Lightbox {
@@ -36,7 +34,6 @@ export function initLightbox() {
       }
 
       initLightbox() {
-        // Знаходимо всі зображення в галереях
         const galleryLinks = document.querySelectorAll("[data-lightbox]");
 
         console.log("Found gallery links:", galleryLinks.length);
@@ -46,21 +43,17 @@ export function initLightbox() {
           return;
         }
 
-        // Очищаємо попередні зображення
         this.images = [];
 
         galleryLinks.forEach((link, index) => {
-          // Додаємо зображення в масив
           this.images.push({
             src: link.href,
             alt: link.querySelector("img")?.alt || "",
           });
 
-          // Видаляємо старі слухачі
           const newLink = link.cloneNode(true);
           link.parentNode.replaceChild(newLink, link);
 
-          // Додаємо новий слухач з правильним індексом
           newLink.addEventListener("click", (e) => {
             e.preventDefault();
             this.open(index);
@@ -70,7 +63,6 @@ export function initLightbox() {
 
         console.log("Images loaded:", this.images);
 
-        // Закриття лайтбоксу
         this.closeBtn.addEventListener("click", () => this.close());
         this.lightbox.addEventListener("click", (e) => {
           if (e.target === this.lightbox) {
@@ -78,7 +70,6 @@ export function initLightbox() {
           }
         });
 
-        // Навігація
         this.prevBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           this.prev();
@@ -88,7 +79,6 @@ export function initLightbox() {
           this.next();
         });
 
-        // Клавіатура
         document.addEventListener("keydown", (e) => {
           if (!this.lightbox.classList.contains("active")) return;
 
