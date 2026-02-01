@@ -1,4 +1,3 @@
-/* Мобільна версія */
 .our-work {
   padding: 110px 24px 90px;
   background-color: var(--about-us-our-work-bg-color);
@@ -80,7 +79,6 @@
   margin: 0;
 }
 
-/* Десктоп */
 @media (min-width: 768px) {
   .our-work {
     padding: 120px 60px 100px;
@@ -140,7 +138,6 @@
   }
 }
 
-/* Дуже маленькі екрани */
 @media (max-width: 480px) {
   .our-work__step {
     flex-direction: column;
