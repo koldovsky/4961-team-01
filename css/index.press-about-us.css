@@ -1,0 +1,151 @@
+/* Kurchyk Vladyslav */
+.press {
+  padding: 110px 0;
+  background: var(--ui-brand-color);
+  color: var(--text-color);
+}
+
+.press__inner {
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  column-gap: 60px;
+  row-gap: 32px;
+  align-items: start;
+}
+
+.press__label {
+  display: inline;
+  grid-column: 1;
+  margin: 0 0 8px 0;
+  color: var(--ui-small-color);
+  font-size: 12px;
+  font-weight: 700;
+  height: auto;
+  white-space: nowrap;
+  line-height: 19.2px;
+  text-align: left;
+}
+
+.press__heading {
+  grid-column: 2;
+  margin: 0;
+  font-size: 38px;
+  font-weight: 400;
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  color: var(--big-title-color);
+  line-height: 40.8px;
+  max-width: 680px;
+}
+
+.press__content {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.press__container-image {
+  margin-top: 60px;
+}
+
+.press__img {
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.press__items {
+  margin-top: 60px;
+}
+
+.press__tags {
+  color: var(--footer-text-color);
+  font-size: 12px;
+}
+
+.press__item-title {
+  font-family: "Crimson Text", serif;
+  color: var(--big-title-color);
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.press__item-text {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.press__item-link-wrapper {
+  margin-top: 20px;
+}
+
+.press__item-link {
+  font-size: 14px;
+  color: var(--text-color);
+  transition: 0.2s;
+}
+
+.press__item-link:hover {
+  color: var(--footer-li-color-hover);
+  text-decoration: underline;
+}
+
+.press__divider {
+  border: none;
+  border-top: 1px solid var(--footer-hr-color);
+  margin: 15px 0;
+  opacity: 0.1;
+}
+
+.background-pic {
+  background-image: url(../img/cozy-neutral-living-room.png);
+  height: 780px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .press__container-image,
+  .press__items {
+    width: 100%;
+  }
+  .press__item-title {
+    font-weight: 400;
+  }
+  .press__item-text {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .press__inner {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .press__label,
+  .press__heading,
+  .press__content {
+    grid-column: 1;
+  }
+
+  .press__content {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .press__container-image {
+    margin-top: 0px;
+  }
+}

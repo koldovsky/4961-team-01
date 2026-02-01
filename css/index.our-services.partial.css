@@ -1,0 +1,194 @@
+.our-services {
+  padding: 90px 0px 90px 0px;
+  background: var(--ui-light-shade-color);
+}
+
+.our-services__container {
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
+}
+
+/* --- СТИЛІ ДЛЯ МОБІЛЬНИХ  --- */
+.our-services__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.our-services__eyebrow {
+  grid-column: span 1;
+  font-family: var(--ui-button-font-family);
+  color: var(--ui-small-color);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.our-services__title {
+  font-family: "Crimson Text", serif;
+  color: var(--big-title-color);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 30px;
+  grid-column: span 1;
+  margin-top: 50px;
+}
+
+.header-spacer {
+  display: none;
+}
+
+/* --- СТИЛІ ДЛЯ ВЕЛИКИХ ЕКРАНІВ (Desktop) --- */
+@media (min-width: 768px) {
+  .our-services__header {
+    grid-template-columns: repeat(12, 1fr); /* Повертаємо 12 колонок */
+    text-align: left; /* Вирівнювання вліво */
+  }
+
+  .our-services__eyebrow {
+    grid-column: span 2; /* Займає 2 з 12 */
+  }
+
+  .our-services__title {
+    grid-column: span 7; /* Займає 7 з 12 */
+  }
+
+  .header-spacer {
+    display: block; /* Показуємо спейсер */
+    grid-column: span 3; /* Займає решту 3 колонки */
+  }
+}
+
+/* --- СТИЛІ ДЛЯ МОБІЛЬНИХ (1 колонка) --- */
+.our-services__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.service-card {
+  margin-top: 50px;
+}
+
+.service-card__title {
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.service-card__price {
+  margin-top: 25px;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ui-price-color);
+}
+
+.service-card__description {
+  margin-top: 20px;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.service-card__button-block {
+  margin-top: 35px;
+}
+
+.service-card__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: var(--ui-link-color);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.service-card__button-text {
+  font-family: var(--ui-button-font-family);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.service-card__icon-arrow {
+  width: 24px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.service-card__button:hover {
+  color: var(--ui-price-color);
+  text-decoration: underline;
+}
+
+.service-card__button:hover .service-card__icon-arrow {
+  transform: translateX(5px); /* Стрілка трохи рухається вправо */
+}
+
+/* --- СТИЛІ ДЛЯ ВЕЛИКИХ ЕКРАНІВ (12 колонок) --- */
+@media (min-width: 768px) {
+  .our-services__list {
+    grid-template-columns: repeat(12, 1fr); /* Сітка на 12 частин */
+  }
+
+  .service-card {
+    grid-column: span 5; /* За замовчуванням картка займає 5 колонок */
+  }
+
+  /* Магія зміщення: */
+  /* Вибираємо 1-шу, 3-тю, 5-ту картки (непарні) */
+  .service-card:nth-child(odd) {
+    grid-column-start: 3; /* Починаємо з 3-ї лінії (пропускаємо перші 2 колонки) */
+    grid-column-end: span 5; /* І займаємо 5 колонок */
+  }
+}
+
+@media (min-width: 768px) {
+  .our-services__header {
+    grid-template-columns: repeat(12, 1fr);
+    text-align: left;
+    align-items: start; /* Вирівнювання по верхньому краю */
+    margin-bottom: 60px;
+  }
+
+  .our-services__eyebrow {
+    grid-column: span 2;
+    margin: 0; /* Прибираємо дефолтні марджини */
+  }
+
+  .our-services__title {
+    grid-column: 3 / span 7; /* Починаємо з 3-ї лінії, щоб бути під картками */
+    margin: 0; /* Прибираємо margin-top: 50px, який був на мобільці */
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .our-services__list {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px; /* Відступ між колонками */
+    row-gap: 80px;    /* Відступ між рядами карток */
+  }
+
+  .service-card {
+    margin-top: 0;
+    grid-column: span 5;
+  }
+
+  /* Кожна 1-ша та 3-тя картка (непарні) починаються з 3-ї колонки */
+  .service-card:nth-child(odd) {
+    grid-column-start: 3;
+    grid-column-end: span 5;
+  }
+
+  /* Кожна 2-га та 4-та картка (парні) займають наступні 5 колонок */
+  .service-card:nth-child(even) {
+    grid-column: span 5;
+  }
+}

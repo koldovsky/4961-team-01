@@ -1,0 +1,35 @@
+/*body {
+  background-color: #cfcfbb;
+}*/
+
+.additional-services {
+  background-color: var(--additional-services-bg);
+  text-align: center;
+  padding: 100px 20px; 
+}
+
+.additional-services__content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.additional-services__link {
+  font-family: "Crimson Text", serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: var(--additiona-services-link);
+  text-transform: uppercase;
+  line-height: 1.4;
+   display: inline-block;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.slash {
+  font-size: 48px;
+  vertical-align: baseline;
+}
+
+.additional-services__link:hover {
+  color: var(--additional-services-hover);
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,6 +10,7 @@
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="css/about-us.css" />
   </head>
   <body>
     <header class="header">
@@ -24,12 +25,58 @@
         data-hx-get="about-us.header-hero.partial.html"
       ></div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <!--Buldiak Arsen Main Title block-->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.main-title.partial.html"
+      ></section>
+      <!--Buldiak Arsen Main Title block-->
+      <!--Buldiak Arsen Values block-->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.values.partial.html"
+      ></section>
+      <!--Buldiak Arsen Values Title block-->
+      <!--Buldiak Arsen Services block-->
+      <section
+        id="services"
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.services.partial.html"
+      ></section>
+      <!--Buldiak Arsen Services block-->
+      <!-- Kurchyk Vladyslav How we work OFF-->
+      <!-- <div
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.our-work.partial.html"
+      ></div> -->
+      <!-- Kurchyk Vladyslav How we work OFF-->
+      <!--Mariia Diachuk Team block-->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.team.partial.html"
+      ></section>
+      <!--Mariia Diachuk Team block-->
+      <!--Buldiak Arsen CTA block-->
+      <section
+        data-hx-trigger="load"
+        data-hx-swap="outerHTML"
+        data-hx-get="about-us.cta.partial.html"
+      ></section>
+      <!--Buldiak Arsen CTA block-->
+    </main>
     <footer
-      class="footer"
+      class="footer__section"
       data-hx-trigger="load"
       data-hx-swap="outerHTML"
-      data-hx-get="index.footer.partial.html"
+      data-hx-get="global.footer.partial.html"
     ></footer>
+    <script src="js/about-us.scroll.js"></script>
+    <script src="js/about-us.js"></script>
   </body>
 </html>

@@ -1,0 +1,95 @@
+.header__hero {
+  background-color: var(--ui-light-shade-color);
+
+  .header__container {
+    padding: 40px 0 0;
+    margin: 0;
+
+    .header__text {
+      color: var(--h-color);
+      font-family: "Red Hat Display", sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .header__title {
+      color: var(--big-title-color);
+      font-family: "Crimson Text", serif;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-align: center;
+      font-size: 48px;
+      padding-bottom: 30px;;
+
+      @media (min-width: 375px) {
+        .header__title-wbr {
+          display: none;
+        }
+      }
+
+      @media (min-width: 768px) {
+        font-size: 57px;
+        /* max-width: 770px; */
+        line-height: 1.2;
+        padding-bottom: 40px;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 60px;
+      }
+
+      .header__title-italic {
+        color: var(--big-title-color);
+        font-family: "Crimson Text", serif;
+
+      }
+    }
+
+    .header__subtitle {
+      color: var(--text-color);
+      font-family: "Red Hat Display", sans-serif;
+      font-size: 19px;
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 60px;
+    }
+
+    .header__background-container {
+      background-image: url(../img/background_header.jpg);
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+
+      .header__cta-container {
+        .header__cta {
+          display: inline-block;
+          justify-content: center;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          background-color: var(--ui-light-shade-color);
+          color: var(--text-color);
+          font-family: "Red Hat Display", sans-serif;
+          text-align: center;
+          margin: 140px auto ;
+          width: 83px;
+          height: 83px;
+          font-size: 14px;;
+
+           @media (min-width: 375px) {
+         width: 130px;
+          height: 130px;
+          margin: 250px auto;
+      }
+         
+          
+        }
+      }
+    }
+  }
+}

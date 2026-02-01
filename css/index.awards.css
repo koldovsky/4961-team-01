@@ -1,0 +1,55 @@
+.awards {
+  padding: 48px 16px;
+  background-color: var(--color-bg-light);
+}
+
+.awards__title {
+  margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+.awards__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.awards__list {
+  padding-left: 20px;
+}
+
+.awards__item {
+  margin-bottom: 16px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.awards__item time {
+  color: var(--color-accent);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .awards {
+    padding: 64px 40px;
+  }
+
+  .awards__columns {
+    flex-direction: row;
+    gap: 80px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .awards {
+    padding: 96px 80px;
+  }
+
+  .awards__title {
+    font-size: 28px;
+  }
+}

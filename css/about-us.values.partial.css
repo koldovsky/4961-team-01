@@ -1,0 +1,188 @@
+/* Arsen Buldiak */
+
+.values {
+  background-color: var(--ui-light-shade-color);
+  padding: 110px 24px 115px 24px;
+
+  .values__container {
+    max-width: var(--w-content-container-size);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    grid-template-areas:
+      "eyebrow"
+      "first"
+      "content-one"
+      "content-two"
+      "image-two";
+
+    interpolate-size: allow-keywords;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 5fr 4fr;
+      grid-template-rows: auto auto;
+      gap: 55px 60px;
+      grid-template-areas:
+        "eyebrow first content-one"
+        "empty content-two image-two";
+    }
+
+    .values__eyebrow {
+      color: var(--ui-small-color);
+      font-weight: 700;
+      font-size: 12px;
+
+      grid-area: eyebrow;
+    }
+
+    .values__image-wrapper {
+      text-align: center;
+
+      img {
+        height: auto;
+      }
+
+      &:nth-of-type(1) {
+        grid-area: first;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: image-two;
+      }
+    }
+
+    .values__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:nth-of-type(2) {
+        grid-area: content-one;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: content-two;
+      }
+
+      .values__text {
+        color: var(--text-color);
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .values__comment {
+        font-family: var(--ui-button-font-family);
+        color: var(--ui-dark-accent-color);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      /* Accordion container */
+      .values__accordion {
+        margin-top: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Top border line for accordion */
+
+        /* Individual accordion item (details element) */
+        .values__accordion-item {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Border line under each item */
+
+          /* Content inside accordion item */
+          .values__accordion-item-content {
+            padding-bottom: 24px;
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 95%;
+          }
+
+          .values__accordion-item-title {
+            cursor: pointer;
+            font-family: "Crimson Text", serif;
+            font-weight: 400;
+            font-size: 22px;
+            padding: 20px 0; /* Vertical padding for clickable area */
+
+            /* Alignment: text on left, icon on right */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Remove standard marker in most browsers */
+          }
+
+          /* Remove default disclosure triangle in Safari/Chrome */
+          .values__accordion-item-title::-webkit-details-marker {
+            display: none;
+          }
+
+          /* Create PLUS icon using CSS gradients */
+          .values__accordion-item-title::after {
+            /* 1. Remove text and create empty block for icon */
+            content: "";
+            display: block;
+            width: 15px; /* Icon width */
+            height: 15px; /* Icon height */
+            margin-left: 15px;
+
+            /* 2. Draw two lines (vertical and horizontal) using gradients */
+            /* currentColor inherits the text color from parent element */
+            background-image:
+              linear-gradient(black, black),
+              /* Vertical line */ linear-gradient(black, black); /* Horizontal line */
+
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* 3. Set line dimensions:
+               First value: 2px width, 100% height (vertical line)
+               Second value: 100% width, 2px height (horizontal line)
+            */
+            background-size:
+              1.7px 100%,
+              100% 1.7px;
+
+            /* 4. Add smooth transition for rotation and size change */
+            transition:
+              transform 0.3s ease,
+              background-size 0.3s ease;
+          }
+        }
+
+        /* -- OPEN STATE LOGIC -- */
+        /* When details is open (has open attribute), change plus icon to MINUS */
+        .values__accordion-item[open] .values__accordion-item-title::after {
+          /* "Flatten" the vertical line (height becomes 0%), leaving only horizontal line (minus) */
+          background-size:
+            1.7px 0%,
+            100% 1.7px;
+        }
+
+        .values__accordion-item::details-content {
+          height: 0;
+          overflow: hidden;
+          transition:
+            height 0.3s,
+            content-visibility 0.3s;
+          transition-behavior: allow-discrete;
+        }
+
+        .values__accordion-item[open]::details-content {
+          height: auto;
+        }
+      }
+    }
+
+    .values__empty-space {
+      grid-area: empty;
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+}

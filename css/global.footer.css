@@ -1,0 +1,152 @@
+/* Kurchyk Vladyslav */
+.footer__section {
+  background-color: var(--footer-background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.footer__container {
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.footer__logo-link {
+  display: inline-block;
+}
+
+.footer__logo {
+  margin: auto;
+}
+
+.footer__description {
+  margin-top: 30px;
+}
+
+.footer__cta-container {
+  margin-top: 20px;
+}
+
+.footer__cta {
+  color: var(--footer-text-color);
+  font-size: 12px;
+}
+
+.footer__cta-container:hover {
+  text-decoration: underline;
+}
+
+.footer__socials {
+  justify-content: center;
+  column-gap: 15px;
+  display: flex;
+  margin-top: 30px;
+}
+
+.footer__social-item {
+  list-style-type: none;
+}
+
+.footer__nav {
+  margin-top: 60px;
+}
+
+.footer__title {
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: var(--footer-text-color);
+}
+
+.footer__list-item {
+  font-size: 17px;
+  list-style-type: none;
+  padding: 10px 5px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.footer__link:hover {
+  color: var(--footer-li-color-hover);
+  text-decoration: underline;
+}
+
+.footer__subscribe {
+  margin-top: 60px;
+}
+
+.footer__input {
+  background-color: var(--footer-input-color);
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px 26px;
+  border: none;
+}
+
+.footer__button {
+  width: 100%;
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.footer__divider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: var(--footer-hr-color);
+  opacity: 0.2;
+}
+
+.footer__container-bottom {
+  margin: 0px 24px;
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.footer__rights {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    text-align: left;
+    gap: 80px;
+    padding: 100px 40px;
+    justify-content: center;
+  }
+  .footer__about {
+    width: 435px;
+    max-width: 652px;
+  }
+  .footer__socials {
+    justify-content: flex-start;
+  }
+  .footer__nav,
+  .footer__subscribe,
+  .footer__rights {
+    margin: 0;
+  }
+  .footer__link {
+    font-size: 15px;
+  }
+  .footer__button,
+  .footer__input {
+    max-width: 248px;
+  }
+
+  .footer__container-bottom {
+    padding: 20px 40px;
+    margin: 0;
+  }
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

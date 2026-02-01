@@ -1,0 +1,139 @@
+/* SECTION BACKGROUND + SPACING */
+.about-us {
+  background: var(--ui-light-accent-color);
+  padding: 80px 0;
+}
+
+.about-us__inner {
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HEADER LAYOUT:*/
+.about-us__inner {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* <-- makes label more left */
+  column-gap: 60px;
+  row-gap: 32px;
+  align-items: start;
+}
+
+/* Label in the left column */
+.about-us__label {
+  display: inline;
+  grid-column: 1;
+  margin: 0 0 8px 0;
+  color: var(--ui-small-color);
+  font-size: 12px;
+  font-size-adjust: none;
+  font-weight: 700;
+  height: auto;
+  letter-spacing: normal;
+  white-space: nowrap;
+  line-height: 19.2px;
+  text-align: left;
+  text-transform: none;
+  vertical-align: baseline;
+}
+
+/* Title in the right column */
+.about-us__title {
+  display: inline;
+  grid-column: 2;
+  margin: 0;
+  overflow-wrap: break-word;
+  font-family: var(--ui-big-title-font-family);
+  font-size-adjust: none;
+  font-language-override: normal;
+  font-optical-sizing: auto;
+  font-size: 38px;
+  font-weight: 400;
+  height: auto;
+  line-height: 40.8px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--big-title-color);
+  text-align: left;
+  vertical-align: baseline;
+  max-width: 680px;
+}
+
+.about-us__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* CONTENT (image left, text right) aligned with title (right column) */
+.about-us__content {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.about-us__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* text styling similar to example */
+.about-us__text {
+  display: inline;
+  color: var(--text-color);
+  font-optical-sizing: auto;
+  font-size: 17px;
+  font-size-adjust: none;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 27.2px;
+  overflow-wrap: break-word;
+  text-align: left;
+  vertical-align: baseline;
+  text-transform: none;
+  width: auto;
+  font-family: var(--ui-text-font-family);
+}
+
+.about-us__text p + p {
+  margin-top: 18px;
+}
+
+.about-us__text b {
+  color: var(--ui-small-color);
+  font-weight: 600;
+}
+
+.about-us__text .button {
+  margin: 35px 0 0 0;
+  width: 173px;
+  height: 46px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.13px;
+  line-height: 16.9px;
+  font-family: var(--ui-button-font-family);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-us__inner {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .about-us__label,
+  .about-us__title,
+  .about-us__content {
+    grid-column: 1;
+  }
+
+  .about-us__content {
+    grid-template-columns: 1fr;
+  }
+}

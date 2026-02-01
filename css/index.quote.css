@@ -1,0 +1,27 @@
+.quote {
+  padding: 70px 40px;
+  background-color: var(--benefits-bg);
+  text-align: center;
+}
+.quote__icon {
+  color: var(--quote-icon-color);
+  width: 40px;
+  margin: 0 auto 30px;
+}
+.quote__text {
+  font-size: 28px;
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--quote-text-color);
+  max-width: var(--w-content-container-size);
+  justify-self: center;
+}
+.quote__author {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  display: block;
+  margin-top: 25px;
+  font-size: 12px;
+  color: var(--quote-author-color);
+}

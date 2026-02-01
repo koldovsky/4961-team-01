@@ -1,0 +1,6 @@
+@import "global.css";
+@import "global.header-nav.css";
+@import "contacts.header-hero.partial.css";
+@import "contacts.main.partial.css";
+@import "contacts.contact-form.partial.css";
+@import "global.footer.css";

@@ -1,0 +1,95 @@
+/* --- ABOUT US SERVICES *ARSEN BULDIAK* --- */
+
+.services-list {
+  background-color: var(--ui-light-accent-color);
+  padding: 110px 0;
+}
+
+.services-list__container {
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- GRID LAYOUT --- */
+.services-list__grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Мобільна версія: 1 колонка */
+  gap: 50px;
+}
+
+/* --- СТИЛІ ЗАГОЛОВКА (Ліва колонка) --- */
+.services-list__main-title {
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  color: var(--ui-price-color);
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-decoration: underline;
+  position: relative;
+  display: inline-block;
+}
+
+/* --- СТИЛІ КАРТОК/СПИСКІВ --- */
+.services-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.services-list__title {
+  font-family: "Crimson Text", serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.services-list__ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.services-list__ul li {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 30px; /* Місце для іконки/булета */
+}
+
+/* Кастомний булет (можна замінити на SVG іконку) */
+.services-list__ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+
+  height: 24px;
+  width: 20px;
+
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* --- DESKTOP (ВЕЛИКІ ЕКРАНИ) --- */
+@media (min-width: 992px) {
+  .services-list__grid {
+    /* 5 рівних колонок: 1 для заголовка, 4 для списків */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: start; /* Вирівнювання по верху */
+  }
+
+  .services-list__header {
+    /* Заголовок займає першу колонку */
+    grid-column: span 1;
+  }
+
+  /* Списки займають свої колонки автоматично */
+}

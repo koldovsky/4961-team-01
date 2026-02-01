@@ -1,0 +1,109 @@
+/* Basic font settings (can be removed if global styles exist) */
+
+.contacts {
+  background-color: var(--bg-color);
+  /* padding-top: 160px;
+  padding-bottom: 30px; */
+  padding: 160px 24px 30px 24px;
+
+  /* Container for centering */
+  .contacts__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Grid layout in 4 columns */
+  .contacts__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+
+    /* Responsive design */
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 479px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Individual card */
+  .contacts__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    /* Icon wrapper (circular background) */
+    .contacts__icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background-color: var(--icon-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      /* SVG icon */
+      .contacts__icon {
+        width: 30px;
+        height: 30px;
+        color: var(--icon-color);
+      }
+    }
+
+    /* Card title */
+    .contacts__title {
+      font-family: "Crimson Text", serif;
+      font-size: 22px;
+      margin: 0 0 15px 0;
+      font-weight: 400;
+      color: var(--big-title-color);
+    }
+
+    /* Divider line */
+    .contacts__divider {
+      width: 40px;
+      height: 2px;
+      background-color: var(--divider-color);
+      margin-bottom: 15px;
+    }
+
+    .contacts__info {
+      /* Text and links */
+      .contacts__text,
+      .contacts__link {
+        font-size: 17px;
+        line-height: 1.6;
+        color: var(--text-color);
+        text-decoration: none;
+        margin: 0;
+        display: block;
+
+        &:hover {
+          opacity: 0.7;
+          transition: opacity 0.2s ease;
+        }
+      }
+    }
+  }
+
+  /* Map block */
+  .contacts__map {
+    width: 100%;
+    height: 552px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    iframe {
+      max-width: 1200px;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+  }
+}
