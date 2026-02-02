@@ -2,11 +2,19 @@
   background-color: var(--about-us-team-bgcolor);
   padding: 80px 20px;
   font-family: "Crimson Text", serif;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about__us__team__header,
+.about__us__team__list,
+.about__us__team__footer {
   max-width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box;
-
+  padding: 0 20px;
 }
+
 .about__us__team__header {
   max-width: 650px;
   margin: 0 auto 80px auto;
