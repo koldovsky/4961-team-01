@@ -3,43 +3,62 @@
   background-color: var(--about-us-our-work-bg-color);
 }
 
-.our-work__header {
-  margin-bottom: 60px;
+.our-work__container {
+  max-width: var(--w-content-container-size);
+  margin: 0 auto;
+
+  /* Мобільна версія: 1 колонка */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
+/* ВАЖЛИВО: display: contents "знімає" обгортки .our-work__header та .our-work__title-wrap.
+  Завдяки цьому .our-work__kicker, .our-work__title та .our-work__decor
+  стають безпосередніми елементами Grid-сітки контейнера.
+*/
+.our-work__header,
+.our-work__title-wrap {
+  display: contents;
+}
+
+/* Стилізація тексту */
 .our-work__kicker {
   font-size: 12px;
   color: var(--text-color);
   font-weight: 700;
   display: block;
-  margin-bottom: 20px;
+  margin: 0;
+  /* Для мобільного - порядок відображення */
+  order: 1;
 }
 
 .our-work__title {
-  font-size: 30px;
+  font-size: 38px;
+  width: 530px;
+  text-align: left;
+  flex: 1;
   color: var(--big-title-color);
   font-family: var(--ui-big-title-font-family);
   text-transform: uppercase;
   margin: 0;
   font-weight: 400;
   line-height: 1.35;
+  order: 2;
 }
 
-.our-work__title-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
+/* Блоки з контентом */
 .our-work__decor {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  order: 3;
 }
 
+/* Стилі карток (залишаються без змін) */
 .our-work__step {
   display: flex;
-  align-items: center;
+  align-items: center; /* Центрування по вертикалі на мобільному */
   gap: 15px;
   text-align: left;
 }
@@ -79,45 +98,62 @@
   margin: 0;
 }
 
+/* --- DESKTOP GRID (Точна копія Weblium Grid) --- */
 @media (min-width: 768px) {
   .our-work {
     padding: 120px 60px 100px;
   }
 
-  .our-work__header {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto 80px;
+  .our-work__container {
+    /* Створюємо сітку з 12 рівних колонок */
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-auto-rows дозволяє елементам автоматично ставати в нові рядки */
+    grid-auto-rows: auto;
+    /* Відступи: 40px між рядками, 20px між колонками (або підлаштуйте під дизайн) */
+    gap: 40px 20px;
   }
 
+  /* РЯД 1 
+     Структура: [2 col] [6 col] [4 col empty]
+  */
+
+  /* Kicker займає 2 колонки (з 1 по 3 лінію) */
   .our-work__kicker {
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-bottom: 0;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    margin-top: 10px; /* Невелике вирівнювання відносно великого заголовка */
   }
 
+  /* Title займає 6 колонок (з 3 по 9 лінію) */
   .our-work__title {
+    grid-column: 3 / 9;
+    grid-row: 1;
     font-size: 42px;
     text-align: left;
-    flex: 1;
   }
 
-  .our-work__title-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  /* РЯД 2 
+     Структура: [2 col empty] [5 col content] [5 col content]
+     Сума = 12
+  */
+
+  /* Ліва колонка починається з 3 лінії (пропускаємо перші 2) і займає 5 (до 8 лінії) */
+  .our-work__decor--left {
+    grid-column: 3 / 8;
+    grid-row: 2;
+    gap: 60px; /* Відступ між картками всередині стовпчика */
+  }
+
+  /* Права колонка починається з 8 лінії і займає 5 (до 13 лінії) */
+  .our-work__decor--right {
+    grid-column: 8 / 13;
+    grid-row: 2;
     gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
-  .our-work__decor {
-    gap: 60px;
-  }
-
+  /* Адаптація карток під сітку */
   .our-work__step {
-    width: 468px;
+    width: auto;
     align-items: start;
     gap: 25px;
   }
@@ -138,10 +174,15 @@
   }
 }
 
+/* Адаптив для найменших екранів */
 @media (max-width: 480px) {
   .our-work__step {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .our-work__title {
+    font-size: 28px; /* Трохи менший шрифт для мобільних */
   }
 }
