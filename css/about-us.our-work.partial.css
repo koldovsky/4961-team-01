@@ -101,7 +101,7 @@
 /* --- DESKTOP GRID (Точна копія Weblium Grid) --- */
 @media (min-width: 768px) {
   .our-work {
-    padding: 120px 60px 100px;
+    padding: 160px 60px 140px;
   }
 
   .our-work__container {
