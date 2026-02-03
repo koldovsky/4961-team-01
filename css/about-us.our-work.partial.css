@@ -34,8 +34,8 @@
 }
 
 .our-work__title {
-  font-size: 38px;
-  width: 530px;
+  font-size: 30px;
+  width: auto;
   text-align: left;
   flex: 1;
   color: var(--big-title-color);
@@ -128,8 +128,9 @@
   .our-work__title {
     grid-column: 3 / 9;
     grid-row: 1;
-    font-size: 42px;
+    font-size: 38px;
     text-align: left;
+    width: 530px;
   }
 
   /* РЯД 2 
