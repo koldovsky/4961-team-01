@@ -1,12 +1,13 @@
-// Pic-block interactions: parallax scroll + simple lightbox + fallback text
+// Pic-block interactions: fixed parallax + lightbox + fallback text
 (function () {
   function attachInteractions(block) {
     if (!block || block.__picblock_inited) return;
     block.__picblock_inited = true;
 
     const img = block.querySelector('.pic-block__image');
+    const wrapper = block.querySelector('.pic-block__image-wrapper');
     const content = block.querySelector('.pic-block__content');
-    if (!img) return;
+    if (!wrapper) return;
 
     // Show fallback text if image fails to load
     function showFallback() {
@@ -15,33 +16,12 @@
       }
     }
 
-    function hideFallback() {
-      if (content) {
-        content.classList.remove('pic-block__content--fallback');
-      }
+    // Fallback for if image element exists
+    if (img) {
+      img.addEventListener('error', showFallback);
     }
 
-    img.addEventListener('error', showFallback);
-    img.addEventListener('load', hideFallback);
-
-    // If image is already loaded or cached
-    if (img.complete) {
-      hideFallback();
-    }
-
-    // Parallax scroll effect - stronger parallax for better effect
-    function updateParallax() {
-      const rect = img.getBoundingClientRect();
-      const scrolled = window.scrollY || window.pageYOffset;
-      const elementTop = scrolled + rect.top;
-      const parallaxOffset = (scrolled - (elementTop - window.innerHeight)) * 0.1;
-      img.style.transform = `translateY(${parallaxOffset}px)`;
-    }
-
-    window.addEventListener('scroll', updateParallax);
-    updateParallax();
-
-    // Simple lightbox for the image
+    // Simple lightbox for clicking on the wrapper
     function openOverlay(src, alt) {
       const overlay = document.createElement('div');
       overlay.className = 'pic-block__overlay';
@@ -68,7 +48,9 @@
       document.body.appendChild(overlay);
     }
 
-    img.addEventListener('click', () => openOverlay(img.src, img.alt));
+    if (wrapper) {
+      wrapper.addEventListener('click', () => openOverlay('../img/pic1.png', 'Kitchen interior'));
+    }
   }
 
   function initAll() {
