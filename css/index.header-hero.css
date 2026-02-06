@@ -11,7 +11,7 @@
       font-size: 12px;
       font-weight: bold;
       text-align: center;
-      padding-bottom: 20px;
+      padding: 70px 0 20px 0;
     }
 
     .header__title {
@@ -21,7 +21,9 @@
       font-weight: normal;
       text-align: center;
       font-size: 48px;
-      padding-bottom: 30px;;
+      padding-bottom: 30px;
+      margin: 0 20px;
+      line-height: 1.2;
 
       @media (min-width: 375px) {
         .header__title-wbr {
@@ -29,21 +31,32 @@
         }
       }
 
+      @media (min-width: 480px) {
+        margin: auto;
+        max-width: 430px;
+      }
+
       @media (min-width: 768px) {
         font-size: 57px;
-        /* max-width: 770px; */
+        margin: auto;
+        max-width: 560px;
         line-height: 1.2;
         padding-bottom: 40px;
       }
 
       @media (min-width: 992px) {
         font-size: 60px;
+        max-width: 700px;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 60px;
+        max-width: 734px;
       }
 
       .header__title-italic {
         color: var(--big-title-color);
         font-family: "Crimson Text", serif;
-
       }
     }
 
@@ -53,19 +66,33 @@
       font-size: 19px;
       text-align: center;
       font-weight: 500;
-      margin-bottom: 60px;
+      margin: 0 10px 80px 10px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 60px;
+      }
     }
 
     .header__background-container {
       background-image: url(../img/background_header.jpg);
-      min-height: 500px;
+      min-height: 200px;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       display: flex;
       justify-content: center;
+      padding: 110px 0;
+
+      @media (min-width: 768px) {
+        min-height: 500px;
+      }
+
+      @media (min-width: 1200px) {
+        min-height: 622px;
+      }
 
       .header__cta-container {
+        margin: auto;
         .header__cta {
           display: inline-block;
           justify-content: center;
@@ -76,18 +103,21 @@
           color: var(--text-color);
           font-family: "Red Hat Display", sans-serif;
           text-align: center;
-          margin: 140px auto ;
           width: 83px;
           height: 83px;
-          font-size: 14px;;
+          font-size: 14px;
 
-           @media (min-width: 375px) {
-         width: 130px;
-          height: 130px;
-          margin: 250px auto;
-      }
-         
-          
+          @media (min-width: 768px) {
+            width: 120px;
+            height: 120px;
+          }
+
+          @media (min-width: 1200px) {
+            width: 132px;
+            height: 132px;
+            font-size: 15px;
+            font-weight: 500;
+          }
         }
       }
     }

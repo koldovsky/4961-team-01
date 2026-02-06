@@ -59,6 +59,10 @@
   --about-us-team-socials-a-color: #a0a0a0;
   --about-us-team-socials-a-color-hover: #818181;
   --projects-bg-color: #f6f1ed;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --header-height: 4rem;
 }
 img {
   max-width: 100%;

@@ -1,135 +1,253 @@
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .header__nav {
   background-color: var(--ui-light-shade-color);
-  padding: 5px;
+  padding: 5px 25px;
+  z-index: 101;
+  position: relative;
 
-  @media (min-width: 990px) {
-    padding: 14px 2px;
-    margin: 0 auto;
+  &.menu-open {
+    background-color: var(--ui-light-accent-color);
   }
 
   .header__nav-container {
     display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-
-    @media (min-width: 990px) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  }
-
-  .header__contacts {
-    order: 3;
-    display: flex;
-    gap: 8px;
-    font-style: normal;
-    flex-direction: column;
     align-items: center;
-    margin: 16px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 var(--spacing-sm);
 
-    @media (min-width: 990px) {
-      flex-direction: row;
-      order: 1;
-      font-size: 1rem;
+    .header__contacts--desktop {
+      display: none;
+      overflow: hidden;
+      z-index: -200px;
     }
 
-    .header__contact {
+    .header__logo {
+      flex: 0 0 auto;
+    }
+
+    .header__burger {
+      flex: 0 0 auto;
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      z-index: 102;
+
+      .header__burger-line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-color);
+        transition: 0.3s;
+        transform-origin: center;
+
+        &:nth-child(1) {
+          transform: translateY(-8px);
+        }
+
+        &:nth-child(2) {
+          transform: translateY(0);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(8px);
+        }
+      }
+
+      &.is-active {
+        .header__burger-line:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        .header__burger-line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .header__burger-line:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .header__nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      background-color: var(--ui-light-accent-color);
+      transition: height 0.3s ease;
       display: flex;
-      padding-bottom: 6px;
+      flex-direction: column;
+      align-items: center;
 
-      &:nth-child(1)::after {
-        content: "";
-        width: 0.5px;
-        height: 16px;
-        background-color: var(--header-icon-color);
-        margin: 1px 10px 0 15px;
+      &.is-open {
+        height: calc(100vh - var(--header-height));
       }
 
-      .header__contact-icon {
-        color: var(--header-icon-color);
-      }
+      .header__nav-list {
+        list-style: none;
+        padding: 20px 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
 
-      .header__contact {
-        .header__contact-link {
-          padding-left: 10px;
+        .header__nav-link {
           color: var(--text-color);
           text-decoration: none;
           font-family: "Red Hat Display", sans-serif;
-          font-size: 0.9rem;
+          font-size: 1.1rem;
+          position: relative;
 
-          @media (min-width: 990px) {
-            font-size: 1rem;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--text-color);
+            transition: width 0.3s;
           }
 
-          &:hover {
-            text-decoration: underline;
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+
+      .header__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 0;
+        font-style: normal;
+
+        .header__contact {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          &:first-child::after {
+            content: "";
+            width: 1px;
+            height: 18px;
+            background-color: var(--header-icon-color);
+            margin-left: 12px;
+          }
+          .header__contact-icon {
+            color: var(--header-icon-color);
+          }
+
+          .header__contact-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 0.9rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
     }
-  }
-
-  .header__logo {
-    order: 1;
-    margin-bottom: 15px;
-    margin-left: 16px;
-    @media (min-width: 990px) {
-      flex-direction: row;
-      order: 2;
-      margin: auto;
+    .header__nav-menu.is-open .header__nav-list {
+      opacity: 1;
     }
   }
+}
 
-  .header__nav-list {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    order: 2;
+/* DESKTOP */
+@media (min-width: 990px) {
+  .header__nav {
+    background-color: var(--ui-light-shade-color);
+    padding: 14px 0;
+    margin: 0 auto;
 
-    @media (min-width: 990px) {
+    .header__nav-container {
       flex-direction: row;
-      justify-content: space-between;
-      gap: 40px;
-      order: 3;
-      font-size: 1rem;
-    }
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5px 40px;
 
-    .header__nav-item {
-      list-style: none;
-      margin-bottom: 15px;
-    }
+      .header__contacts--desktop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 0;
+        font-style: normal;
 
-    .header__nav-link {
-      color: var(--text-color);
-      text-decoration: none;
-      font-family: "Red Hat Display", sans-serif;
-      font-size: 1.1rem;
-      position: relative;
-      display: inline-block;
+        .header__contact {
+          display: flex;
+          align-items: center;
+          gap: 8px;
 
-      @media (min-width: 990px) {
-        font-size: 1rem;
+          &:first-child::after {
+            content: "";
+            width: 1px;
+            height: 18px;
+            background-color: var(--header-icon-color);
+            margin-left: 12px;
+          }
+          .header__contact-icon {
+            color: var(--header-icon-color);
+          }
+
+          .header__contact-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 0.9rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: var(--text-color);
-        transition: width 0.3s ease;
+      .header__burger {
+        display: none;
       }
 
-      &:hover::after {
-        width: 100%;
+      .header__nav-menu {
+        position: static;
+        height: auto;
+        overflow: visible;
+        max-width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        background: none;
+
+        .header__nav-list {
+          flex-direction: row;
+          gap: 30px;
+          opacity: 1;
+        }
+        .header__contacts--mobile {
+          display: none;
+        }
       }
     }
   }
