@@ -1,0 +1,119 @@
+/* Styles for pic-block component */
+.pic-block {
+  padding: 0;
+  background: transparent;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pic-block__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Верхній блок - має бути вище за картинку */
+.pic-block__content {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 10;
+}
+
+.pic-block__content.pic-block__content--fallback {
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+  padding: 48px 16px;
+  z-index: 10;
+}
+
+.pic-block__title {
+  font-size: 28px;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.pic-block__description {
+  margin: 0;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Картинка - залипаюча секція */
+.pic-block__image-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/pic1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.pic-block__image {
+  display: none;
+}
+
+.pic-block--visible {
+  opacity: 1;
+  transform: none;
+}
+
+.pic-block__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.pic-block__overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 6px;
+}
+
+@media (max-width: 800px) {
+  .pic-block__container {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .pic-block__image-wrapper {
+    width: 100%;
+    flex: none;
+  }
+
+  .pic-block__content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .pic-block__title {
+    font-size: 22px;
+  }
+}

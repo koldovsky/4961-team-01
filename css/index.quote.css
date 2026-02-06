@@ -16,6 +16,11 @@
   color: var(--quote-text-color);
   max-width: var(--w-content-container-size);
   justify-self: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  hyphens: auto;
 }
 .quote__author {
   font-family: "Red Hat Display", sans-serif;

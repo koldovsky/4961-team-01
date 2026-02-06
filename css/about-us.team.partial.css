@@ -1,12 +1,24 @@
 .about__us__team {
   background-color: var(--about-us-team-bgcolor);
-  padding: 100px 80px;
+  padding: 80px 20px;
   font-family: "Crimson Text", serif;
-
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+.about__us__team__header,
+.about__us__team__list,
+.about__us__team__footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .about__us__team__header {
   max-width: 650px;
-  margin-bottom: 80px;
+  margin: 0 auto 80px auto;
+  text-align: center;
 }
 
 .about__us__team__label {
@@ -15,19 +27,37 @@
   margin-bottom: 16px;
   font-family: "Red Hat Display", sans-serif;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .about__us__team__title {
-  font-size: 38px;
+  font-size: clamp(24px, 5vw, 38px);
   line-height: 1.3;
   text-transform: uppercase;
   font-weight: 400;
   color: var(--about-us-team-title-color);
+  max-width: 500px;
+  margin: 0 auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+}
+@media (max-width: 500px) {
+  .about__us__team__title {
+    font-size: 26px;
+    line-height: 1.2;
+    padding: 0 10px;
+  }
 }
 
 .about__us__team__title em {
   font-style: italic;
   text-transform: uppercase;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .about__us__team__list {
@@ -36,7 +66,7 @@
   gap: 60px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   .about__us__team__list {
     grid-template-columns: 1fr 1fr;
     gap: 80px 60px;
@@ -47,18 +77,29 @@
   display: flex;
   flex-direction: column;
   background-color: var(--about-us-team-member-color);
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (min-width: 768px) {
   .about__us__team__member {
     flex-direction: row;
+    align-items: stretch;
+  }
+  .about__us__team__image {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+  .about__us__team__content {
+    flex: 1 1 50%;
+    max-width: 50%;
   }
 }
 
 .about__us__team__image {
-  flex: 1;
-  min-width: 250px;
-  height: 320px;
+  width: 100%;
+  aspect-ratio:
   overflow: hidden;
 }
 
@@ -71,11 +112,13 @@
 }
 
 .about__us__team__content {
-  flex: 1;
-  padding: 40px 30px;
+  padding: 30px 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .about__us__team__name {
@@ -96,13 +139,15 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--about-us-team-responsibilities-color);
+  word-break: break-word;
 }
 
 .about__us__team__footer {
-  margin-top: 60px;
+  margin-top: 80px;
   text-align: center;
   font-size: 16px;
   color: var(--about-us-team-footer-color);
+  word-break: break-word;
 }
 
 .about__us__team__footer em {
@@ -117,7 +162,11 @@
 .about__us__team__socials {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin-top: 20px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .about__us__team__socials a {
@@ -126,15 +175,17 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  margin-right: 10px;
+  margin-right: 0px;
   color: var(--about-us-team-socials-a-color);
   font-size: 18px;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+  
 }
 
 .about__us__team__socials a:hover {
-  color: var(--about-us-team-socials-a-color-hover); /* м’який золотистий відтінок */
+  color: var(--about-us-team-socials-a-color-hover);
   transform: translateY(-2px);
 }
 
